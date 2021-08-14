@@ -1,9 +1,10 @@
+$config = Get-Content .\.env | ConvertFrom-StringData;
+
 az storage blob upload-batch `
-    --account-name "site10201" `
+    --account-name $config.storageAccount `
     --source .\content `
     --destination '$web' `
 
-$config = Get-Content .\.env | ConvertFrom-StringData;
 
 # https://www.davepaquette.com/archive/2020/05/10/deploying-a-static-site-to-azure-using-the-az-cli.aspx
 az cdn endpoint purge `
