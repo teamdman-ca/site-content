@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            window.addEventListener("load", async ()=>{
+                console.log("Fetching data");
+                const data = await (await fetch("gamemodes.json")).json();
+                console.log("Data retrieved");
+                console.dir(data);
+                const con = document.querySelector("#container");
+                con.innerText = "";
+                for (const entry of data.gameModes) {
+                    const elem = document.createElement("div");
+                    elem.innerText = entry.id + "\u2014" + entry.name;
+                    con.append(elem);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>League of Legends active gamemodes</h1>
+            <div id="container">
+                Loading...
+            </div>
+            <br/>
+            <a href="index.html">Home</a>
+        </main>
+    </body>
+</html>
