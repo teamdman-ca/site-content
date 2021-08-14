@@ -1,29 +1,44 @@
 <html>
     <head>
         <script>
-            window.addEventListener("load", async ()=>{
+            async function loadGamemodes() {
                 console.log("Fetching data");
                 const data = await (await fetch("gamemodes.json")).json();
+
                 console.log("Data retrieved");
                 console.dir(data);
+
+                console.log("Clearing content");
                 const con = document.querySelector("#container");
-                con.innerText = "";
+                con.innerHTML = "";
+
+                console.log("Adding content");
                 for (const entry of data.gameModes) {
                     const elem = document.createElement("div");
                     elem.innerText = entry.id + "\u2014" + entry.name;
                     con.append(elem);
                 }
+
+                console.log("Done");
+                return data;
+            }
+
+            window.addEventListener("load", async ()=>{
+                await loadGamemodes();
             });
         </script>
     </head>
     <body>
         <main>
             <h1>League of Legends active gamemodes</h1>
+            <div id="errors"></div>
             <div id="container">
                 Loading...
             </div>
+            <button style="margin:10px" onclick="connectServiceWorker()" type="button">Enable notifications</button>
             <br/>
             <a href="gamemodes.json">Raw</a>
+            <br/>
             <br/>
             <a href="index.html">Home</a>
         </main>
