@@ -13,6 +13,10 @@
                 con.innerHTML = "";
 
                 console.log("Adding content");
+                const date = document.createElement("div");
+                date.innerText = "Updated on " + new Date(data.dateGenerated).toString();
+                con.append(date);
+                
                 for (const entry of data.gameModes) {
                     const elem = document.createElement("div");
                     elem.innerText = entry.id + "\u2014" + entry.name;
