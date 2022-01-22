@@ -13,5 +13,4 @@ az cdn endpoint purge `
     --resource-group $config.cdnResourceGroup `
     --name $config.cdnEndpoint `
     --profile-name $config.cdnProfile `
-    --no-wait `
-    --content-paths '/' '/index.html';
+    --content-paths "/*";

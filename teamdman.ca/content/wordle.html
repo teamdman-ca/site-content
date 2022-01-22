@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="wordle.js"></script>
+        <link rel="stylesheet" href="wordle.css">
+    </head>
+    <body>
+        <h1>Cheating at Wordle</h1>
+        <p>This uses the cain wordlist to help cheat at wordle. Regular expressions can be used to identify words matching letters in the positions we know are correct, and the letters in positions we know are incorrect but still must be contained within the word.</p>
+        <span>Enter a guess</span>
+        <input id="guess" type="text">
+        <button type="button" id="add">Add</button>
+
+        <br>
+        Guesses: (click to change result)
+        <ul id="guesses">
+
+        </ul>
+
+        Regex: <span id="reg"></span>
+        <br>
+
+        Lookup: 
+        <ul id="lookup">
+
+        </ul>
+    </body>
+</html>
