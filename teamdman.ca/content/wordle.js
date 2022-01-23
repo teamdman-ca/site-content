@@ -13,9 +13,19 @@ async function main() {
     const btn = document.getElementById("add");
     const guesses = document.getElementById("guesses");
     const lookup = document.getElementById("lookup");
+    const regInput = document.getElementById("reg");
     
-    function updateLookup() {
+    function updateWordList() {
+        console.log("Updating word list");
         lookup.innerHTML = "";
+        words.filter(w => w.match(regInput.value)).slice(0,1000).forEach(w => {
+            const li = document.createElement("li");
+            li.innerText = w;
+            lookup.appendChild(li);
+        })
+    }
+
+    function updateLookup() {
         const good = {};
         const bad = [];
         const close = {};
@@ -43,21 +53,19 @@ async function main() {
             if (i in good) {
                 reg += good[i];
             } else {
-                reg += `[^${bad.concat(close[i] ?? []).join("")}]`;
+                reg += `[^${[...new Set(bad.concat(close[i] ?? []))].join("")}]`;
             }
             i++;
         }
-        for (const letter of Object.values(close)) {
-            reg += `(?<=.*${letter}.*)`;
+        console.log(close);
+        for (const letterSet of Object.values(close)) {
+            for (const letter of [...new Set(letterSet)]) {
+                reg += `(?<=.*${letter}.*)`;
+            }
         }
         reg += "$";
-        document.getElementById("reg").innerText = reg;
-
-        words.filter(w => w.match(reg)).slice(0,1000).forEach(w => {
-            const li = document.createElement("li");
-            li.innerText = w;
-            lookup.appendChild(li);
-        })
+        regInput.value = reg;
+        updateWordList();
     }
 
     btn.addEventListener("click", function() {
@@ -96,5 +104,7 @@ async function main() {
         if (event.key !== "Enter") return;
         btn.click();
     })
+    regInput.addEventListener("input", ()=>updateWordList());
+    regInput.addEventListener("change", ()=>updateWordList());
 }
 main()
