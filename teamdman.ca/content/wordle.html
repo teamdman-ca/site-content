@@ -4,26 +4,55 @@
         <link rel="stylesheet" href="wordle.css">
     </head>
     <body>
-        <h1>Cheating at Wordle</h1>
-        <p>This uses the cain wordlist to help cheat at <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a>. Regular expressions can be used to identify words matching letters in the positions we know are correct, and the letters in positions we know are incorrect but still must be contained within the word.</p>
-        <span>Enter a guess</span>
-        <input id="guess" type="text">
-        <button type="button" id="add">Add</button>
+        <div>
+            <h1>Cheating at Wordle</h1>
+            <p>
+                This uses the cain wordlist to help cheat at <a href="https://www.powerlanguage.co.uk/wordle/">wordle</a>.
+                <br>
+                Regular expressions can be used to identify words matching letters in the positions we know are correct, and the letters in positions we know are incorrect but still must be contained within the word.
+                <br>
+                It turns out that the entire wordlist and logic <a href="https://twitter.com/SeppahBaws/status/1484712004447350790">is client side as well.</a>
+            </p>
+        </div>
+        <div style="margin-bottom:10px">
+            <a href="..">Home</a>
+            <br>
+            <br>
+            <button id="spoiler" type="button">Spoiler</button>
+        </div>
 
-        <br>
-        Guesses: (click to change result)
-        <ul id="guesses">
+        <div>
+            <div>
+                <span>Wordlist:</span>
+                <select id="wordlist">
+                    <option value="./wordle.txt">Wordle</option>
+                    <option value="./cain.txt">Cain</option>
+                </select>
+                <span id="wordlist-info"></span>
+            </div>
+            <div>
+                <span>Enter a guess</span>
+                <input id="guess" type="text">
+                <button type="button" id="add">Add</button>
+            </div>
+        </div>
 
-        </ul>
-
-        Regex:
-        <br>
-        <input id="reg"></input>
-        <br>
-
-        Lookup: 
-        <ul id="lookup">
-
-        </ul>
+        <div>
+            Guesses: (click to change result)
+            <ul id="guesses">
+    
+            </ul>
+        </div>
+        <div>
+            Regex:
+            <br>
+            <input id="reg"></input>
+        </div>
+        <div>
+            Lookup: 
+            <ul id="lookup">
+    
+            </ul>
+        </div>
     </body>
 </html>

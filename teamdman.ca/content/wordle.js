@@ -1,5 +1,5 @@
-async function getWords() {
-    const req = await fetch("./cain.txt");
+async function getWords(url) {
+    const req = await fetch(url);
     const body = await req.text();
     const words = body.split("\n");
     console.log(`Loaded ${words.length} words.`);
@@ -8,15 +8,34 @@ async function getWords() {
 
 
 async function main() {
-    const words = await getWords();
     const input = document.getElementById("guess");
     const btn = document.getElementById("add");
     const guesses = document.getElementById("guesses");
     const lookup = document.getElementById("lookup");
     const regInput = document.getElementById("reg");
-    
-    function updateWordList() {
+    const wordlist = document.getElementById("wordlist");
+    const wordlistInfo = document.getElementById("wordlist-info");
+
+    let latest = null;
+    let words = [];
+
+    async function spoiler() {
+        if (!confirm("This will spoil today's Wordle answer, continue?")) return;
+        // https://twitter.com/SeppahBaws/status/1484713151287414788/photo/1
+        const startDate = new Date(2021, 5, 19, 0,0,0);
+        const today = new Date().setHours(0,0,0,0);
+        const diff = Math.round((today - startDate)/ 864e5);
+        const words = await getWords("./wordle.txt");
+        alert(`Today's word is "${words[diff]}".`);
+    }
+
+    async function updateWordList() {
         console.log("Updating word list");
+        if (latest != wordlist.value) {
+            latest = wordlist.value;
+            words = await getWords(latest);
+            wordlistInfo.innerText = `Loaded ${words.length} words.`;
+        }
         lookup.innerHTML = "";
         words.filter(w => w.match(regInput.value)).slice(0,1000).forEach(w => {
             const li = document.createElement("li");
@@ -25,7 +44,7 @@ async function main() {
         })
     }
 
-    function updateLookup() {
+    async function updateLookup() {
         const good = {};
         const bad = [];
         const close = {};
@@ -57,7 +76,6 @@ async function main() {
             }
             i++;
         }
-        console.log(close);
         for (const letterSet of Object.values(close)) {
             for (const letter of [...new Set(letterSet)]) {
                 reg += `(?<=.*${letter}.*)`;
@@ -65,10 +83,10 @@ async function main() {
         }
         reg += "$";
         regInput.value = reg;
-        updateWordList();
+        await updateWordList();
     }
 
-    btn.addEventListener("click", function() {
+    btn.addEventListener("click", async function() {
         const li = document.createElement("li");
         const x = input.value;
         for (const char of x) {
@@ -78,12 +96,12 @@ async function main() {
             letter.classList.add("bad");
             letter.classList.add("letter");
             let i=0;
-            letter.addEventListener("click", function() {
+            letter.addEventListener("click", async function() {
                 letter.classList.remove("bad");
                 letter.classList.remove("good");
                 letter.classList.remove("close");
                 letter.classList.add(["bad","good","close"][++i%3]);
-                updateLookup();
+                await updateLookup();
             })
             li.appendChild(letter);
         }
@@ -91,13 +109,13 @@ async function main() {
         rm.type="button";
         rm.innerText = "remove";
         rm.classList.add("rmbtn");
-        rm.addEventListener("click", function() {
+        rm.addEventListener("click", async function() {
             guesses.removeChild(li);
-            updateLookup();
+            await updateLookup();
         })
         li.appendChild(rm);
         guesses.appendChild(li);
-        updateLookup();
+        await updateLookup();
         input.value = "";
     });
     input.addEventListener("keyup", event => {
@@ -106,5 +124,9 @@ async function main() {
     })
     regInput.addEventListener("input", ()=>updateWordList());
     regInput.addEventListener("change", ()=>updateWordList());
+    wordlist.addEventListener("change", ()=>updateWordList());
+
+    document.getElementById("spoiler").addEventListener("click", spoiler);
+    await updateWordList();
 }
-main()
+window.addEventListener("load", main);
