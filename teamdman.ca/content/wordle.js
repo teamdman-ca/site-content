@@ -15,6 +15,7 @@ async function main() {
     const regInput = document.getElementById("reg");
     const wordlist = document.getElementById("wordlist");
     const wordlistInfo = document.getElementById("wordlist-info");
+    const find = document.getElementById("find");
 
     let latest = null;
     let words = [];
@@ -28,6 +29,21 @@ async function main() {
         const words = await getWords("./wordle.txt");
         alert(`Today's word is "${words[diff]}".`);
     }
+
+    find.addEventListener("click", async function() {
+        const word = window.prompt("Enter the word you want to find");
+        const words = await getWords("./wordle.txt");
+        const index = words.indexOf(word);
+        if (index === -1) {
+            alert("That word is not a valid Wordle word.");
+            return;
+        }
+        const startDate = new Date(2021, 5, 19, 0,0,0);
+        const day = new Date();
+        day.setTime(index * 864e5 + startDate.getTime());
+        day.setDate(day.getDate()+1);
+        alert(day);
+    });
 
     async function updateWordList() {
         console.log("Updating word list");
