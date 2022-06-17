@@ -88,6 +88,7 @@
 
 <div id="container">
 	<main>
+		<a href="/">Home</a>
 		<h1>Wordle Assistant</h1>
 
 		<a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>
