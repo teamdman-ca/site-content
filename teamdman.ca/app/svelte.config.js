@@ -10,7 +10,7 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		trailingSlash: "ignore",
+		trailingSlash: "always",
 		prerender: {
 			default: true,
 		},
