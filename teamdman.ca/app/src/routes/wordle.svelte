@@ -1,7 +1,7 @@
 <script type="ts">
 	import { browser } from "$app/env";
 	const availableListNames = ["wordle.txt", "cain.txt"];
-	let activeListName: string;
+	let activeListName = availableListNames[0];
 	let wordLists: Record<string, string[]> = {};
 	let autoRegex = true;
 	let regex = "";
@@ -41,7 +41,7 @@
 		if (name in wordLists) return;
 		const resp = await fetch(name);
 		const body = await resp.text();
-		const list = body.split("\n");
+		const list = body.trim().split("\n");
 		console.log("Got list with " + list.length + " entries.");
 		wordLists[name] = list;
 		wordLists = wordLists;
@@ -55,10 +55,10 @@
 		guesses = guesses;
 	}
 
-	$: activeList = wordLists?.[activeListName]?.filter((x) => x.match(regex)) ?? [];
-	$: wordcount = activeList.length;
-	$: longestWordLength = guesses.map((x) => x.length).reduce((a, b) => Math.max(a, b), 0);
+	$: activeList = wordLists[activeListName] ?? [];
+	$: results = activeList.filter((x) => x.match(regex));
 
+	$: longestWordLength = guesses.map((x) => x.length).reduce((a, b) => Math.max(a, b), 0);
 	$: {
 		loadWordlist(activeListName);
 	}
@@ -84,27 +84,29 @@
 			regex = reg;
 		}
 	}
-
-	activeListName = availableListNames[0];
 </script>
 
 <div id="container">
 	<main>
-		<!-- <a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>
-        <br/>
-        <a href="https://twitter.com/SeppahBaws/status/1484712004447350790">Interesting Twitter thread</a>
-        <br/>
-        <a href="https://qntm.org/wordle">Absurdle</a>
-        <br/>
-        <br/> -->
 		<h1>Wordle Assistant</h1>
+
+		<a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>
+		<br />
+		<a href="https://twitter.com/SeppahBaws/status/1484712004447350790"
+			>Interesting Twitter thread</a
+		>
+		<br />
+		<a href="https://qntm.org/wordle">Absurdle</a>
+		<br />
+		<br />
+
 		<span>Wordlist:</span>
 		<select bind:value={activeListName}>
 			{#each availableListNames as name}
 				<option value={name}>{name}</option>
 			{/each}
 		</select>
-		<span>containing {wordcount} words.</span>
+		<span>containing {activeList.length} words.</span>
 
 		<div>
 			<form on:submit|preventDefault={() => addGuess(guess)}>
@@ -151,7 +153,7 @@
 		<div id="results">
 			<p>Matching words:</p>
 			<ul>
-				{#each activeList.slice(0, 100) as word}
+				{#each results.slice(0, 100) as word}
 					<li>{word}</li>
 				{/each}
 			</ul>
@@ -169,6 +171,10 @@
 
 	main {
 		padding: 10px;
+	}
+
+	a {
+		color: rgb(133, 133, 133);
 	}
 
 	@media only screen and (max-width: 632px) {
