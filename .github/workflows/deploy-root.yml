@@ -24,6 +24,11 @@ jobs:
       run: npm ci
     - working-directory: teamdman.ca/app
       run: npm run build
+    - name: wipe
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob delete-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --source '$web'
     - name: upload
       uses: azure/CLI@v1
       with:
