@@ -28,7 +28,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode key --destination '$web' --source teamdman.ca/app/build
+          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --destination '$web' --source teamdman.ca/app/build
     - name: purge cdn
       uses: azure/CLI@v1
       with:
