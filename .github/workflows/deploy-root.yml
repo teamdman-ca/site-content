@@ -1,0 +1,34 @@
+name: Deploy static files to Azure storage account
+
+on:
+  push:
+    branches:
+      - "master"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      working-directory: teamdman-ca/app
+      run: npm run build
+    - uses: azure/login@v1
+      with: 
+        creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }}
+    - name: upload
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode key --destination '$web' --source teamdman-ca/app/build
+    - name: purge cdn
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az cdn endpoint purge --content-paths "/*" --profile-name "${{ secrets.CDN_PROFILE_NAME}}" --name "${{ secrets.CDN_ENDPOINT_NAME }}" --resource-group "${{ secrets.RESOURCE_GROUP_NAME }}"
+    - name: logout
+      run: az logout
+      if: always()
