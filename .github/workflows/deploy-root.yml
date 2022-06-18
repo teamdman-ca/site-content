@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: guh
+      run: ls -la; pwd
     - name: build
-      working-directory: ./teamdman-ca/app
+      working-directory: site-content/teamdman-ca/app
       run: npm run build
     - uses: azure/login@v1
       with: 
