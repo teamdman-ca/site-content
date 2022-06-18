@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
-    - run: npm ci
-    - name: build
-      working-directory: teamdman.ca/app
+    - working-directory: teamdman.ca/app
+      run: npm ci
+    - working-directory: teamdman.ca/app
       run: npm run build
     - uses: azure/login@v1
       with: 
