@@ -13,10 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: guh
-      run: ls -la; pwd
     - name: build
-      working-directory: site-content/teamdman-ca/app
+      working-directory: teamdman.ca/app
       run: npm run build
     - uses: azure/login@v1
       with: 
@@ -25,7 +23,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode key --destination '$web' --source ./teamdman-ca/app/build
+          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode key --destination '$web' --source teamdman.ca/app/build
     - name: purge cdn
       uses: azure/CLI@v1
       with:
