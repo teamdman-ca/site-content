@@ -1,6 +1,7 @@
 name: Deploy static files to Azure storage account
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - "master"
