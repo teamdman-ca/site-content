@@ -144,6 +144,7 @@
 	<section>
 		<h1>Misc</h1>
 		<a href="https://www.myanonamouse.net/inviteapp.php">Book tracker</a>
+		<a href="https://www.emilydamstra.com/please-enough-dead-butterflies/">Dead butterflies</a>
 	</section>
 	<section>
 		<h1>Art</h1>
