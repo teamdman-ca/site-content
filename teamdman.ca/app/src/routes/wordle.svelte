@@ -7,6 +7,7 @@
 		state: State;
 	}[];
 	let guesses: Guess[] = [];
+	let guess = "";
 
 	function addGuess(value: string) {
 		console.log("Adding guess", value);
@@ -56,23 +57,32 @@
 	}
 
 	const availableWordListUrls = ["wordle.txt", "cain.txt", "http://example.com/words.txt"];
-	let delimeter = "[\\n;,-]";
-	let wordListCache: Record<string, string[]> = {};
+	let delimeter = "[\\n;,]";
+	let wordListCache: Record<string, string> = {};
 	let activeWordListUrl = availableWordListUrls[0];
-	$: activeList = wordListCache[activeWordListUrl] ?? [];
+	function updateWordList(body: string, delim: string) {
+		let exp: string | RegExp;
+		try {
+			exp = new RegExp(delim);
+		} catch (e) {
+			exp = delim;
+		}
+		return body.split(exp) ?? [];
+	}
 	async function loadWordlist(name: string) {
 		if (!browser) return;
 		if (name in wordListCache) return;
 		const resp = await fetch(name);
 		const body = await resp.text();
-		const list = body.trim().split("\n");
-		console.log("Got list with " + list.length + " entries.");
-		wordListCache[name] = list;
+		console.log(`Received body length ${body.length} response from ${activeWordListUrl}`);
+		wordListCache[name] = body.trim();
 		wordListCache = wordListCache;
+		activeWordListUrl = activeWordListUrl;
 	}
 	$: {
 		loadWordlist(activeWordListUrl);
 	}
+	$: activeList = updateWordList(wordListCache[activeWordListUrl] ?? "", delimeter);
 
 	let autoRegex = true;
 	let regex = "";
@@ -113,7 +123,6 @@
 		if (bad.length > 0) reg += `(?<!.*[${bad.join("")}].*)`;
 		regex = reg;
 	}
-	let guess = "";
 
 	$: results = activeList.filter((x) => x.match(new RegExp(regex, "i")));
 </script>
