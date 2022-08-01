@@ -46,6 +46,11 @@
 		}
 		const ch = guesses[guessIndex][charIndex];
 		ch.state = getNext(ch.state);
+		for (const g of guesses) {
+			if (g?.[charIndex].char === ch.char) {
+				g[charIndex].state = ch.state;
+			}
+		}
 		guesses = guesses;
 		updateRegex();
 	}
