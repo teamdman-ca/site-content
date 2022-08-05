@@ -1,5 +1,4 @@
-<main>
-	<a href="..">Home</a>
+<main class="muh-main">
 	<h1>Syncplay</h1>
 	<span
 		>Download Syncplay from <a href="https://github.com/Syncplay/syncplay/releases">here</a></span
@@ -9,9 +8,3 @@
 	<br />
 	<br />
 </main>
-
-<style>
-	main {
-		padding: 10px;
-	}
-</style>
