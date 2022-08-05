@@ -228,17 +228,8 @@
 </div>
 
 <style>
-	:root {
-		background-color: #18181a;
-		color: #d7d7c0;
-	}
-
 	main {
 		padding: 10px;
-	}
-
-	a {
-		color: rgb(133, 133, 133);
 	}
 
 	@media only screen and (max-width: 632px) {
