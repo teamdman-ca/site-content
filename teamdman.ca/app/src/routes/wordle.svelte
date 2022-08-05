@@ -1,5 +1,6 @@
 <script type="ts">
 	import { browser } from "$app/env";
+	import { dev } from "$app/env";
 
 	type State = "good" | "close" | "bad";
 	type Guess = {
@@ -28,6 +29,7 @@
 		updateRegex();
 		guess = "";
 	}
+
 	function deleteGuess(index: number) {
 		guesses = guesses.filter((_, i) => i !== index);
 		updateRegex();
@@ -55,11 +57,11 @@
 		guesses = guesses;
 		updateRegex();
 	}
-
-	const availableWordListUrls = ["wordle.txt", "cain.txt", "http://example.com/words.txt"];
-	let delimeter = "[\\n;,]";
+	const wordleWordListPath = "wordle.txt";
+	const cainWordListPath = "cain.txt";
+	let activeWordListUrl = wordleWordListPath;
 	let wordListCache: Record<string, string> = {};
-	let activeWordListUrl = availableWordListUrls[0];
+	let delimeter = "[\\n;,]";
 	function updateWordList(body: string, delim: string) {
 		let exp: string | RegExp;
 		try {
@@ -73,7 +75,10 @@
 		if (!browser) return;
 		if (name in wordListCache) return;
 		const resp = await fetch(name);
-		const body = await resp.text();
+		let body = await resp.text();
+		if (resp.status !== 200) {
+			body = "error_loading_wordlist_status_" + resp.status;
+		}
 		console.log(`Received body length ${body.length} response from ${activeWordListUrl}`);
 		wordListCache[name] = body.trim();
 		wordListCache = wordListCache;
@@ -125,14 +130,20 @@
 	}
 
 	$: results = activeList.filter((x) => x.match(new RegExp(regex, "i")));
+
+	if (dev) {
+		addGuess("beans");
+		cycleState(0, 1);
+		cycleState(0, 1);
+		cycleState(0, 2);
+	}
 </script>
 
 <div id="container">
-	<main>
-		<a href="..">Home</a>
-		<section>
-			<h1>Wordle Assistant</h1>
-
+	<main class="muh-main pb-80">
+		<h1>Wordle Assistant</h1>
+		<section class="mb-2">
+			<h2>Links</h2>
 			<a href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>
 			<br />
 			<a href="https://twitter.com/SeppahBaws/status/1484712004447350790"
@@ -143,60 +154,50 @@
 		</section>
 
 		<section>
-			<h2>Wordlists</h2>
-			<ul>
-				{#each availableWordListUrls as url}
-					<li>
-						<input bind:value={url} />
-					</li>
-				{/each}
-			</ul>
-		</section>
+			<h2>Config</h2>
 
-		<section>
-			<h2>Select wordlist</h2>
-			<span>Wordlist:</span>
-			<select bind:value={activeWordListUrl}>
-				{#each availableWordListUrls as name}
-					<option value={name}>{name}</option>
-				{/each}
-			</select>
-			<br />
-			<label>
-				Delimeter regex:
-				<input bind:value={delimeter} />
-			</label>
-			<br />
-			<br />
+			<div class="my-2">
+				<label for="active-url" class="muh-label">Wordlist URL</label>
+				<div class="flex">
+					<span
+						class="inline-flex items-center px-3  rounded-l-md border border-r-0  border-gray-600 text-white focus:ring-4 focus:outline-none  font-medium text-sm text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800"
+					>
+						<button type="button" class="" on:click={() => (activeWordListUrl = wordleWordListPath)}
+							>Wordle</button
+						>
+					</span>
+					<span
+						class="inline-flex items-center px-3 border border-r-0 border-l-0  border-gray-600 text-white focus:ring-4 focus:outline-none  font-medium text-sm text-center bg-orange-600 hover:bg-orange-700 focus:ring-orange-800"
+					>
+						<button type="button" on:click={() => (activeWordListUrl = cainWordListPath)}
+							>Cain</button
+						>
+					</span>
+					<input
+						bind:value={activeWordListUrl}
+						type="text"
+						id="active-url"
+						class="rounded-none rounded-r-lg  border  block flex-1 min-w-0 w-full text-sm  p-2.5  bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+					/>
+				</div>
+			</div>
+
+			<label for="delim" class="muh-label">Delimeter regex</label>
+			<input id="delim" class="muh-input" bind:value={delimeter} />
 			<span>Identified {activeList.length} words.</span>
 		</section>
 
 		<section>
-			<h2>Guess</h2>
+			<h2>Guesses</h2>
 			<div>
 				<form on:submit|preventDefault={() => addGuess(guess)}>
-					<label>
-						<span>Enter a guess:</span>
-						<input bind:value={guess} />
+					<label for="guess" class="muh-label">
+						<span>Guess</span>
 					</label>
-					<button type="submit">Add</button>
+					<input id="guess" class="muh-input" bind:value={guess} />
+					<button type="submit" class="mt-2 muh-button">Add</button>
 				</form>
 			</div>
-
-			<div>
-				<label>
-					<span>Auto regex</span>
-					<input type="checkbox" bind:checked={autoRegex} />
-				</label>
-			</div>
-
-			<div>
-				<span>Regex:</span>
-				<input id="reg" bind:value={regex} disabled={autoRegex} />
-			</div>
-		</section>
-		<section>
-			<h2>Guesses</h2>
 
 			<ul>
 				{#each guesses as guess, guessIndex}
@@ -211,13 +212,34 @@
 								on:click={() => cycleState(guessIndex, charIndex)}>{char.char}</button
 							>
 						{/each}
-						<button type="button" on:click={() => deleteGuess(guessIndex)}>Remove</button>
+						<button type="button" class="muh-button" on:click={() => deleteGuess(guessIndex)}
+							>Remove</button
+						>
 					</li>
 				{/each}
 			</ul>
 		</section>
 		<section>
 			<h2>Results</h2>
+
+			<div>
+				<label class="muh-label">
+					<span>Auto regex: </span>
+					<input class="muh-checkbox" type="checkbox" bind:checked={autoRegex} />
+				</label>
+			</div>
+			<div>
+				<span>Regex</span>
+				<input
+					id="reg"
+					type="text"
+					class:muh-input-disabled={autoRegex}
+					class="border text-sm rounded-lg block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500 text-green-500 bg-black font-mono"
+					bind:value={regex}
+					disabled={autoRegex}
+				/>
+			</div>
+
 			<ul>
 				{#each results.slice(0, 100) as word}
 					<li>{word}</li>
@@ -228,37 +250,18 @@
 </div>
 
 <style>
-	main {
-		padding: 10px;
-	}
-
-	@media only screen and (max-width: 632px) {
-		h1 {
-			text-align: center;
-		}
-	}
-
-	#reg {
-		background-color: black;
-		color: rgb(0, 255, 0);
-		display: inline-block;
-		width: 30rem;
-		max-width: 100%;
-	}
-
 	.char {
-		border-radius: 3px;
-		border: 3px solid black;
+		@apply border-black border-2 rounded-xl p-4 text-xl mx-0.5;
 	}
 
 	.good {
-		background-color: green;
+		@apply bg-green-500 text-white;
 	}
 	.close {
-		background-color: hsl(60, 100%, 50%);
+		@apply bg-yellow-500 text-white;
 	}
 	.bad {
 		/* background-color: darkslategrey; */
-		background-color: maroon;
+		@apply bg-red-800 text-white;
 	}
 </style>

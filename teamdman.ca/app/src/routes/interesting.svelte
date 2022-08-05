@@ -1,8 +1,7 @@
-<main>
-	<a href="..">Home</a>
+<main class="muh-main">
 	<h1>Interesting links</h1>
 	<p>A bunch of stuff that used to be in my bookmark bar but I never really visit.</p>
-	<section>
+	<section class="my-4">
 		<h1>Programming</h1>
 		<br />
 		<a href="https://larsjung.de/h5ai/">https://larsjung.de/h5ai/</a>
@@ -101,16 +100,23 @@
 		<br />
 		<a href="https://sizeof.cat/">tech blog</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Music</h1>
 		<a href="https://soundcloud.com/flandre-sdm">https://soundcloud.com/flandre-sdm</a>
+		<br />
+		<a href="https://www.reddit.com/r/norulesmusic2/">https://www.reddit.com/r/norulesmusic2/</a>
+		<br />
+		<a
+			href="https://www.reddit.com/r/progmetal/comments/bdlv9q/a_small_guide_to_get_into_prog_metal/"
+			>prog metal</a
+		>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Reading</h1>
 		<a href="https://www.goodreads.com/series/266949-shadow-sun">Shadows Sun</a>
 		<a href="https://witchculttranslation.com/table-of-content/">Re:Zero WN</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Games</h1>
 		<a
 			href="javascript:var i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){`{s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);`}"
@@ -141,12 +147,12 @@
 		<br />
 		<a href="https://app.crackingthecryptic.com/sudoku/j3m76TrmfD">Sudoku</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Misc</h1>
 		<a href="https://www.myanonamouse.net/inviteapp.php">Book tracker</a>
 		<a href="https://www.emilydamstra.com/please-enough-dead-butterflies/">Dead butterflies</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Art</h1>
 		<a href="https://www.deviantart.com/rhads/art/Forest-Spirit-548894017">rhads</a>
 		<br />
@@ -154,7 +160,7 @@
 		<br />
 		<a href="https://danbooru.donmai.us/posts?page=2&tags=ruu_%28tksymkw%29">Ruu art</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Anime</h1>
 		<a href="https://randomc.net/2012/10/03/shin-sekai-yori-01/">Review of shinsekai yori</a>
 		<br />
@@ -181,7 +187,7 @@
 		<a href="http://151.80.40.155/#">Touhou music</a>
 		<a href="https://touhou.kuukunen.net/">More touhou music</a>
 	</section>
-	<section>
+	<section class="my-4">
 		<h1>Learning japanese</h1>
 		<a href="http://genki.japantimes.co.jp/about_en">http://genki.japantimes.co.jp/about_en</a>
 		<br />
@@ -194,9 +200,3 @@
 		<a href="https://www.imabi.net/">https://www.imabi.net/</a>
 	</section>
 </main>
-
-<style>
-	main {
-		padding: 10px;
-	}
-</style>
