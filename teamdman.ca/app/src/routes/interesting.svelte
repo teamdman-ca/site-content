@@ -110,6 +110,8 @@
 			href="https://www.reddit.com/r/progmetal/comments/bdlv9q/a_small_guide_to_get_into_prog_metal/"
 			>prog metal</a
 		>
+		<br />
+		<a href="http://miya.nipah.moe:81/public/">http://miya.nipah.moe:81/public/</a>
 	</section>
 	<section class="my-4">
 		<h1>Reading</h1>
