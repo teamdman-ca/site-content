@@ -153,6 +153,7 @@
 		<h1>Misc</h1>
 		<a href="https://www.myanonamouse.net/inviteapp.php">Book tracker</a>
 		<a href="https://www.emilydamstra.com/please-enough-dead-butterflies/">Dead butterflies</a>
+		<a href="https://alogs.space/robowaifu/res/15630.html">Community working on robot waifus</a>
 	</section>
 	<section class="my-4">
 		<h1>Art</h1>
