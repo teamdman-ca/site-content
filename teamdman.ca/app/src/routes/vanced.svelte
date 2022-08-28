@@ -24,4 +24,5 @@
 	</p>
 	<p>They only took away the download links, but the manager should still work for a little bit.</p>
 	<a href="manager.apk">DOWNLOAD</a>
+	<a href="https://site502022.z27.web.core.windows.net/vanced/manager.apk">OTHER LINK</a>
 </main>
