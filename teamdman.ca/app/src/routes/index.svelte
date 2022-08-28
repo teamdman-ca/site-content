@@ -9,6 +9,7 @@
 		<li><a href="syncplay">Syncplay server</a></li>
 		<li><a href="vehicle-risk/index.html">Vehicle risk estimation tool</a></li>
 		<li><a href="encoding">Encoding helper</a></li>
+		<li><a href="vanced">Youtube Vanced APK</a></li>
 	</ul>
 
 	<h1>External Stuff</h1>
