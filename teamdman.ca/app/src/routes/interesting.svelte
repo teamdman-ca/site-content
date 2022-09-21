@@ -12,6 +12,8 @@
 	<section class="my-4">
 		<h1>Programming</h1>
 		<br />
+		<a href="https://www.cs.columbia.edu/~hgs/etc/writing-bugs.html">Common bugs in writing</a>
+		<br />
 		<a href="https://larsjung.de/h5ai/">https://larsjung.de/h5ai/</a>
 		<br />
 		<a href="https://swagitda.com/blog/posts/the-security-obstructionism-secobs-market/">SecObs</a>
