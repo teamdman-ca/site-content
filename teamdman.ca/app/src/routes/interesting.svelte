@@ -2,6 +2,14 @@
 	<h1>Interesting links</h1>
 	<p>A bunch of stuff that used to be in my bookmark bar but I never really visit.</p>
 	<section class="my-4">
+		<h1>Articles</h1>
+		<br />
+		<a href="https://cloudpundit.com/2022/09/12/cloud-adoption-will-fail-because-of-the-skills-gap/"
+			>Cloud adoption will fail because of the skills gap</a
+		>
+		<br />
+	</section>
+	<section class="my-4">
 		<h1>Programming</h1>
 		<br />
 		<a href="https://larsjung.de/h5ai/">https://larsjung.de/h5ai/</a>
