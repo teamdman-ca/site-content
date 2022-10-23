@@ -122,6 +122,8 @@
 		>
 		<br />
 		<a href="http://miya.nipah.moe:81/public/">http://miya.nipah.moe:81/public/</a>
+		<br />
+		<a href="https://ciechanow.ski/sound/">Nature of sound</a>
 	</section>
 	<section class="my-4">
 		<h1>Reading</h1>
