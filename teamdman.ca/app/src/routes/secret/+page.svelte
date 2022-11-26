@@ -309,9 +309,9 @@
 		</section>
 
 		<audio id="song" autoplay loop>
-			<source src="~/tppidev/victory.mp3" type="audio/mp3" />
+			<source src="secret/victory.mp3" type="audio/mp3" />
 
-			<embed src="~/tppidev/victory.mp3" loop="true" />
+			<embed src="secret/victory.mp3" loop="true" />
 		</audio>
 	</body>
 </html>
