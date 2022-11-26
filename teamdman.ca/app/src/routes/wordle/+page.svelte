@@ -1,6 +1,6 @@
 <script type="ts">
-	import { browser } from "$app/env";
-	import { dev } from "$app/env";
+	import { browser } from "$app/environment";
+	import { dev } from "$app/environment";
 
 	type State = "good" | "close" | "bad";
 	type Guess = {
@@ -71,21 +71,24 @@
 		}
 		return body.split(exp) ?? [];
 	}
-	async function loadWordlist(name: string) {
+	async function fetchWordList(url: string) {
 		if (!browser) return;
-		if (name in wordListCache) return;
-		const resp = await fetch(name);
+		if (url in wordListCache) return;
+		if (!url.startsWith("http")) {
+			url = "wordle/" + url;
+		}
+		const resp = await fetch(url);
 		let body = await resp.text();
 		if (resp.status !== 200) {
 			body = "error_loading_wordlist_status_" + resp.status;
 		}
 		console.log(`Received body length ${body.length} response from ${activeWordListUrl}`);
-		wordListCache[name] = body.trim();
+		wordListCache[url] = body.trim();
 		wordListCache = wordListCache;
 		activeWordListUrl = activeWordListUrl;
 	}
 	$: {
-		loadWordlist(activeWordListUrl);
+		fetchWordList(activeWordListUrl);
 	}
 	$: activeList = updateWordList(wordListCache[activeWordListUrl] ?? "", delimeter);
 
@@ -139,8 +142,9 @@
 	}
 </script>
 
+<a class="underline text-xl fixed right-5 block" href="/">Home</a>
 <div id="container">
-	<main class="muh-main pb-80">
+	<main class="muh-main m-4 pb-80 prose">
 		<h1>Wordle Assistant</h1>
 		<section class="mb-2">
 			<h2>Links</h2>
@@ -183,7 +187,7 @@
 			</div>
 
 			<label for="delim" class="muh-label">Delimeter regex</label>
-			<input id="delim" class="muh-input" bind:value={delimeter} />
+			<input id="delim" class="border" bind:value={delimeter} />
 			<span>Identified {activeList.length} words.</span>
 		</section>
 
@@ -194,8 +198,22 @@
 					<label for="guess" class="muh-label">
 						<span>Guess</span>
 					</label>
-					<input id="guess" class="muh-input" bind:value={guess} />
+					<input id="guess" class="border-2 border-blue-300" bind:value={guess} />
 					<button type="submit" class="mt-2 muh-button">Add</button>
+
+					<!-- @apply text-white
+		focus:ring-4
+		font-medium
+		rounded-lg
+		text-sm
+		px-5
+		py-2.5
+		mr-2
+		mb-2
+		bg-blue-600
+		hover:bg-blue-700
+		focus:outline-none
+		focus:ring-blue-800 -->
 				</form>
 			</div>
 
@@ -249,6 +267,13 @@
 	</main>
 </div>
 
+<!-- <svelte:head>
+	<style>
+		body {
+			@apply bg-slate-900;
+		}
+	</style>
+</svelte:head> -->
 <style>
 	.char {
 		@apply border-black border-2 rounded-xl p-4 text-xl mx-0.5;
@@ -264,4 +289,81 @@
 		/* background-color: darkslategrey; */
 		@apply bg-red-800 text-white;
 	}
+	/* 
+	.muh-main {
+		@apply m-2
+		format
+		format-invert
+		lg:format-lg;
+	}
+
+	.muh-label {
+		@apply block
+		mb-2
+		text-sm
+		font-medium
+		text-gray-300;
+	}
+
+	.muh-checkbox {
+		@apply w-4
+		h-4
+		text-blue-600
+		rounded
+		focus:ring-2
+		focus:ring-blue-600
+		ring-offset-gray-800
+		bg-gray-700
+		border-gray-600;
+	}
+
+	.muh-input {
+		@apply border
+		text-sm
+		rounded-lg
+		block
+		w-full
+		p-2.5
+		bg-gray-700
+		border-gray-600
+		placeholder-gray-400
+		text-white
+		focus:ring-blue-500
+		focus:border-blue-500;
+	}
+
+	.muh-input-disabled {
+		@apply cursor-not-allowed;
+	}
+
+	.muh-select {
+		@apply border
+		text-sm
+		rounded-lg
+		block
+		w-full
+		p-2.5
+		bg-gray-700
+		border-gray-600
+		placeholder-gray-400
+		text-white
+		focus:ring-blue-500
+		focus:border-blue-500;
+	}
+
+	.muh-button {
+		@apply text-white
+		focus:ring-4
+		font-medium
+		rounded-lg
+		text-sm
+		px-5
+		py-2.5
+		mr-2
+		mb-2
+		bg-blue-600
+		hover:bg-blue-700
+		focus:outline-none
+		focus:ring-blue-800;
+	} */
 </style>

@@ -212,8 +212,16 @@
 	let debounce: "none" | "plaintext" | "base64" = "none";
 	let plaintext = "";
 	let base64 = "";
-	$: debounce !== "plaintext" ? (plaintext = UTF8ArrToStr(data)) : void 0;
-	$: debounce !== "base64" ? (base64 = base64EncArr(data)) : void 0;
+	$: if (debounce !== "plaintext") {
+		try {
+			plaintext = UTF8ArrToStr(data);
+		} catch (e) {
+			plaintext = e.message;
+		}
+	}
+	$: if (debounce !== "base64") {
+		base64 = base64EncArr(data);
+	}
 
 	function setData(x: any, deb: typeof debounce) {
 		debounce = deb;
@@ -221,20 +229,21 @@
 	}
 </script>
 
-<main class="muh-main">
+<a class="underline text-xl fixed right-5 top-1 block" href="/">Home</a>
+<main class="m-4">
 	<div>
-		<label class="muh-label" for="plain">Plaintext</label>
+		<label class="block mb-2 text-sm font-medium" for="plain">Plaintext</label>
 		<textarea
-			class="muh-input"
+			class="border text-sm rounded-lg block w-full p-2.5"
 			id="plain"
 			value={plaintext}
 			on:input={(e) => setData(strToUTF8Arr(e.target.value), "plaintext")}
 		/>
 	</div>
-	<div>
-		<label class="muh-label" for="base64">Base 64</label>
+	<div class="mt-2">
+		<label class="block mb-2 text-sm font-medium" for="base64">Base 64</label>
 		<textarea
-			class="muh-input"
+			class="border text-sm rounded-lg block w-full p-2.5"
 			id="base64"
 			value={base64}
 			on:input={(e) => setData(base64DecToArr(e.target.value), "base64")}
