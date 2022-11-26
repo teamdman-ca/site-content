@@ -36,12 +36,12 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob delete-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --source '$web'
+          az storage blob delete-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --source '${{ secrets.STORAGE_CONTAINER_NAME }}'
     - name: upload
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --destination '$web' --source teamdman.ca/app/build
+          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --destination '${{ secrets.STORAGE_CONTAINER_NAME }}' --source teamdman.ca/app/build
     - name: purge cdn
       uses: azure/CLI@v1
       with:
