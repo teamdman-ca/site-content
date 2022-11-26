@@ -43,10 +43,16 @@
 
 		<section>
 			<h2>Site health</h2>
-			<img
-				src="https://github.com/teamdman-ca/site-content/actions/workflows/deploy-root.yml/badge.svg"
-				alt="github actions status badge"
-			/>
+			<a
+				href="https://github.com/teamdman-ca/site-content/actions/workflows/deploy-root.yml"
+				target="_blank"
+				rel="noreferrer"
+			>
+				<img
+					src="https://github.com/teamdman-ca/site-content/actions/workflows/deploy-root.yml/badge.svg"
+					alt="github actions status badge"
+				/>
+			</a>
 		</section>
 	</article>
 </main>
