@@ -1,4 +1,4 @@
-<article class="muh-main">
+<article class="prose">
 	<h1>2022-08-21 1:18AM</h1>
 	<br />
 	<br />
