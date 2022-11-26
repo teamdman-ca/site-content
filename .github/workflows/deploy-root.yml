@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - "master"
+    paths:
+      - "teamdman.ca/app"
+
 
 permissions:
   contents: read
