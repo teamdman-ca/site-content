@@ -1,4 +1,6 @@
 <!-- ORIGINALLY HERE http://www.matmartinez.net/nsfw/  -->
+<!-- and http://tppidev.github.io/secret/ -->
+<!-- https://github.com/TPPIDev/TPPIDev.github.io/blob/master/secret/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
