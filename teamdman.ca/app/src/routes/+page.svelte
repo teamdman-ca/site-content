@@ -40,6 +40,14 @@
 				</li>
 			</ul>
 		</section>
+
+		<section>
+			<h2>Site health</h2>
+			<img
+				src="https://github.com/teamdman-ca/site-content/actions/workflows/deploy-root.yml/badge.svg"
+				alt="github actions status badge"
+			/>
+		</section>
 	</article>
 </main>
 
