@@ -1,16 +1,19 @@
 import type { Load } from "@sveltejs/kit";
 export const load: Load = async () => {
-	const markdown = import.meta.glob("./markdown/*.md", { as: "raw" });
-	// import.meta.glob("./markdown/*.png", { as: "raw" });
-    const pattern = /\/([^/]*?).md$/
+	const markdown = import.meta.glob("./markdown/*.md", { as: "raw"});
+	// const images = import.meta.glob("./markdown/*.png");
+    const pattern = /\/([^/]*?)\..*$/
+    const baseName = (path: string) => path.match(pattern)?.[1] || path;
 	return {
-        recipes: Object.keys(markdown).map((k) => {
-            const name = k.match(pattern)?.[1];
-            const url = `./markdown/${name}.png`;
+        recipes: await Promise.all(Object.keys(markdown).map(async (mdPath) => {
+            const name = baseName(mdPath);
+            console.log(name);
+            const imageUrl = (await import(`./markdown/${name}.png`)).default;
+            console.log(imageUrl);
             return {
                 name,
-                imageUrl: new URL(url, import.meta.url).href
-            }
-        }),
+                imageUrl,
+            };
+        })),
     }
 };
