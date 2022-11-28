@@ -314,9 +314,9 @@
 		</section>
 
 		<audio id="song" autoplay loop>
-			<source src="secret/victory.mp3" type="audio/mp3" />
+			<source src="victory.mp3" type="audio/mp3" />
 
-			<embed src="secret/victory.mp3" loop="true" />
+			<embed src="victory.mp3" loop="true" />
 		</audio>
 	</body>
 </html>
