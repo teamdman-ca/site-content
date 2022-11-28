@@ -1,8 +1,8 @@
 import type { PageLoad } from "./$types";
 export const load: PageLoad = async ({ params }) => {
-	const path = `../markdown/${params.recipe}.md?raw`;
-	console.log("Loading from '"+path+"'");
-	const md = await import(path);
+	// must use literal in the import for vite to pick it up
+	// can't use intermediate variable for the string path
+	const md = await import(`../markdown/${params.recipe}.md?raw`);
 	return {
 		name: params.recipe,
 		markdown: md.default
