@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>Desert - TeamDman</title>
+</svelte:head>
 <p>Coming soon...</p>
 
 <!-- <script>

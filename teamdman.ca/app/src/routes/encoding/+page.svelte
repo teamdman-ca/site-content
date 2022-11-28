@@ -229,6 +229,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Encoding - TeamDman</title>
+</svelte:head>
+
 <a class="underline text-xl fixed right-5 top-1 block" href="/">Home</a>
 <main class="m-4">
 	<div>
