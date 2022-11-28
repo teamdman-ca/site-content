@@ -16,7 +16,7 @@
 		<ul>
 			{#each data.recipes as recipe}
 				<li>
-					<a class="underline" href="recipes/{recipe.name}"
+					<a class="underline" href={recipe.name}
 						>{recipe.name}
 						<img src={recipe.imageUrl} alt="recipe preview" />
 					</a>

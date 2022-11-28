@@ -11,7 +11,7 @@
 			here.
 		</p>
 		<p>
-			Hashes are available <a href="vanced/hashes.txt">here</a>, Ctrl+F for <code>manager.apk</code>
+			Hashes are available <a href="hashes.txt">here</a>, Ctrl+F for <code>manager.apk</code>
 		</p>
 		<p>
 			Also available in the <a href="https://pastebin.com/Pt2AzE8L">pastebin</a> from
@@ -33,7 +33,11 @@
 		<p>
 			They only took away the download links, but the manager should still work for a little bit.
 		</p>
-		<a href="vanced/manager.apk">DOWNLOAD</a>
+		<a href="manager.apk">DOWNLOAD</a>
 		<a href="https://site502022.z27.web.core.windows.net/vanced/manager.apk">OTHER LINK</a>
+		<a
+			href="https://github.com/teamdman-ca/site-content/blob/54dd70386ffe6cd3d3f56fa520669d7fd62947b7/teamdman.ca/app/static/vanced/manager.apk"
+			>GITHUB LINK</a
+		>
 	</article>
 </main>
