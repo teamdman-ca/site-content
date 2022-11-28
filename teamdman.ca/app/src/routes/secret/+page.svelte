@@ -2,6 +2,9 @@
 <!-- and http://tppidev.github.io/secret/ -->
 <!-- https://github.com/TPPIDev/TPPIDev.github.io/blob/master/secret/index.html -->
 <!DOCTYPE html>
+<svelte:head>
+	<title>Secret - TeamDman</title>
+</svelte:head>
 <html lang="en">
 	<head>
 		<title>Loading…</title>

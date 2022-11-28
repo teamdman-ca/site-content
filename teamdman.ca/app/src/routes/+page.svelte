@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Home - TeamDman</title>
+</svelte:head>
+
 <main>
 	<article class="prose prose-xl m-auto font-serif">
 		<h1 class="text-center max-w-full block">TeamDman</h1>

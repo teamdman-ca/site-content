@@ -142,6 +142,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Wordle - TeamDman</title>
+</svelte:head>
+
 <a class="underline text-xl fixed right-5 block" href="/">Home</a>
 <div id="container">
 	<main class="muh-main m-4 pb-80 prose">

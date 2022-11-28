@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>Vanced - TeamDman</title>
+</svelte:head>
 <main class="m-4">
 	<a class="underline text-xl fixed right-5 block" href="/">Home</a>
 
