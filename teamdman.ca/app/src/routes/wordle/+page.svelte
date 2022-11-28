@@ -74,9 +74,9 @@
 	async function fetchWordList(url: string) {
 		if (!browser) return;
 		if (url in wordListCache) return;
-		if (!url.startsWith("http")) {
-			url = "wordle/" + url;
-		}
+		// if (!url.startsWith("http")) {
+		// 	url = "wordle/" + url;
+		// }
 		const resp = await fetch(url);
 		let body = await resp.text();
 		if (resp.status !== 200) {
