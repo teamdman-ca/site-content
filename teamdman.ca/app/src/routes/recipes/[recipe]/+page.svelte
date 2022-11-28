@@ -10,7 +10,7 @@
 </svelte:head>
 <nav class="fixed right-5 top-1">
 	<a class="underline text-xl block text-right" href="/">Home</a>
-	<a class="underline text-xl block text-right" href="./">Back to recipes</a>
+	<a class="underline text-xl block text-right" href="../">Back to recipes</a>
 </nav>
 
 <main>
