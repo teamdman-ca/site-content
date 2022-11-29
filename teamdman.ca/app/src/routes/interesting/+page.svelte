@@ -119,6 +119,17 @@
 			<a href="https://sizeof.cat/">tech blog</a>
 		</section>
 		<section class="my-4">
+			<h1>Learning</h1>
+			<a href="https://www.youtube.com/playlist?list=PLkFD6_40KJIwhWJpGazJ9VSj9CFMkb79A"
+				>CS285 Fall 2019 Berkeley University - Reinforcement Learning</a
+			>
+			<br />
+			<a
+				href="https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZCRwoyGxvQkqVrZgDQi4m-5&index=26"
+				>David Silver DeepMind - Reinforcement Learning</a
+			>
+		</section>
+		<section class="my-4">
 			<h1>Music</h1>
 			<a href="https://soundcloud.com/flandre-sdm">https://soundcloud.com/flandre-sdm</a>
 			<br />
