@@ -143,6 +143,12 @@
 			<a href="http://miya.nipah.moe:81/public/">http://miya.nipah.moe:81/public/</a>
 			<br />
 			<a href="https://ciechanow.ski/sound/">Nature of sound</a>
+			<br />
+			<a href="https://lostfrog.net/">Lost Frog (lolicore)</a>
+			<br />
+			<a href="https://lolicore.net/">Lolicore.net</a>
+			<br />
+			<a href="https://www.youtube.com/@BreadMemes">BreadMemes (lolicore) [re]uploader</a>
 		</section>
 		<section class="my-4">
 			<h1>Reading</h1>
