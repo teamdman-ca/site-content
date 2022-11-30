@@ -1,29 +1,20 @@
 import type { Load } from "@sveltejs/kit";
 export const load: Load = async () => {
 	const markdown = import.meta.glob("./markdown/*.md", { as: "raw" });
-	// const images = import.meta.glob("./markdown/*.png");
+	const images = import.meta.glob("./markdown/*.{png,jpg,jpeg,gif,webp}");
     const pattern = /\/([^/]*?)\..*$/
     const baseName = (path: string) => path.match(pattern)?.[1] || path;
 	return {
         recipes: await Promise.all(Object.keys(markdown).map(async (mdPath) => {
-            const name = baseName(mdPath);
-            console.log(`Discovered recipe for ${name}`);
-            const supportedExtensions = ["png","jpg","jpeg","gif","webp"];
-            let imageUrl = undefined as string | undefined;
-            for (const ext of supportedExtensions) {
-                try {
-                    console.log(`Importing ${name} image as ${ext}`);
-                    imageUrl = (await import(`./markdown/${name}.${ext}`)).default;
-                    break
-                } catch (e){
-                    // ignore
-                }
+            const recipeName = baseName(mdPath);
+            console.log(`Discovered recipe for ${recipeName}`);
+            const imageName = Object.keys(images).find((imagePath) => imagePath.includes(recipeName));
+            if (imageName === undefined) {
+                throw new Error(`No image found for recipe ${recipeName}`);
             }
-            if (imageUrl === undefined) {
-                throw new Error(`couldn't find image for ${name} recipe`);
-            }
+            const imageUrl = ((await images[imageName]()) as {default:string}).default;
             return {
-                name,
+                name: recipeName,
                 imageUrl,
             };
         })),
