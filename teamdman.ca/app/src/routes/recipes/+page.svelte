@@ -16,10 +16,12 @@
 		<ul>
 			{#each data.recipes as recipe}
 				<li>
-					<a class="underline" href={recipe.name}
-						>{recipe.name}
-						<img src={recipe.imageUrl} alt="recipe preview" />
-					</a>
+					<h2>
+						<a class="underline" href={recipe.name}
+							>{recipe.name}
+							<img src={recipe.imageUrl} alt="recipe preview" />
+						</a>
+					</h2>
 				</li>
 			{/each}
 		</ul>
