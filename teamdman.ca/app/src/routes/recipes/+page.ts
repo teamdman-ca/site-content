@@ -1,6 +1,6 @@
 import type { Load } from "@sveltejs/kit";
 export const load: Load = async () => {
-	const markdown = import.meta.glob("./markdown/*.md", { as: "raw"});
+	const markdown = import.meta.glob("./markdown/*.md", { as: "raw" });
 	// const images = import.meta.glob("./markdown/*.png");
     const pattern = /\/([^/]*?)\..*$/
     const baseName = (path: string) => path.match(pattern)?.[1] || path;
@@ -12,6 +12,7 @@ export const load: Load = async () => {
             let imageUrl = undefined as string | undefined;
             for (const ext of supportedExtensions) {
                 try {
+                    console.log(`Importing ${name} image as ${ext}`);
                     imageUrl = (await import(`./markdown/${name}.${ext}`)).default;
                     break
                 } catch (e){
