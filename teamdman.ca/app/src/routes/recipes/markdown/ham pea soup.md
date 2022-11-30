@@ -8,9 +8,9 @@ https://www.tasteofhome.com/recipes/old-fashioned-split-pea-soup-with-ham-bone/
 - 1 package (16 ounces) dried green split peas
 - 1 meaty ham bone
 - 1 large onion, chopped
-- 1 teaspoon salt
-- 1/2 teaspoon pepper
-- 1/2 teaspoon dried thyme
+- 1 tsp salt
+- 1/2 tsp pepper
+- 1/2 tsp dried thyme
 - 1 bay leaf
 - 1 cup chopped carrot
 - 1 cup chopped celery

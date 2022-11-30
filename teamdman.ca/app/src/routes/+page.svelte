@@ -2,7 +2,7 @@
 	<title>Home - TeamDman</title>
 </svelte:head>
 
-<main>
+<main class="m-5">
 	<article class="prose prose-xl m-auto font-serif">
 		<h1 class="text-center max-w-full block">TeamDman</h1>
 		<hr />
@@ -60,13 +60,3 @@
 		</section>
 	</article>
 </main>
-
-<style>
-	main {
-		margin: 5px;
-	}
-
-	a {
-		@apply visited:text-purple-700;
-	}
-</style>

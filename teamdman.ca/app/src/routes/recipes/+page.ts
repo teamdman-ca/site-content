@@ -7,9 +7,20 @@ export const load: Load = async () => {
 	return {
         recipes: await Promise.all(Object.keys(markdown).map(async (mdPath) => {
             const name = baseName(mdPath);
-            console.log(name);
-            const imageUrl = (await import(`./markdown/${name}.png`)).default;
-            console.log(imageUrl);
+            console.log(`Discovered recipe for ${name}`);
+            const supportedExtensions = ["png","jpg","jpeg","gif","webp"];
+            let imageUrl = undefined as string | undefined;
+            for (const ext of supportedExtensions) {
+                try {
+                    imageUrl = (await import(`./markdown/${name}.${ext}`)).default;
+                    break
+                } catch (e){
+                    // ignore
+                }
+            }
+            if (imageUrl === undefined) {
+                throw new Error(`couldn't find image for ${name} recipe`);
+            }
             return {
                 name,
                 imageUrl,
