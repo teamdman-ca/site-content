@@ -5,6 +5,8 @@ Mom's cooking planner, August 22, referencing Joy of Cooking Nov 29, 2014.
 
 Makes 3 dozen.
 
+I used smarties from Bulk Barn instead of chocolate chips in the batch made for the preview picture.
+
 ## Ingredients
 
 - butter, 1/2 cup
