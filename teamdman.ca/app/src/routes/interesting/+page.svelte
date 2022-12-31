@@ -76,9 +76,6 @@
 			>
 
 			<br />
-			<a href="https://www.mythic-beasts.com/servers/virtual/">Server Hosting</a>
-
-			<br />
 			<a href="https://www.google.com/search?q=sankey+diagram">Sankey diagram</a>
 
 			<br />
@@ -117,6 +114,52 @@
 
 			<br />
 			<a href="https://sizeof.cat/">tech blog</a>
+			<br />
+			<a href="https://syncthing.net/">syncthing</a>
+
+			<section>
+				<h2>Hosting</h2>
+
+				<br />
+				<a href="https://www.mythic-beasts.com/servers/virtual/">Mythic beasts</a>
+				<br />
+				<a
+					href="https://www.reddit.com/r/selfhosted/comments/zujp7u/should_i_switch_from_1password_to_the_self_hosted/j1l83ed/"
+					>This reddit thread</a
+				>
+				mentions <a href="https://www.racknerd.com/BlackFriday/">Racknerd</a> and
+				<a href="https://tailscale.com/kb/1077/secure-server-ubuntu-18-04/">Tailscale</a>
+				for locking down.
+				<br />
+
+				<hr />
+				<p>Here's some suggestions from Copilot lol</p>
+				<br />
+				<a href="https://www.digitalocean.com/">Digital Ocean</a>
+				<br />
+				<a href="https://www.vultr.com/">Vultr</a>
+				<br />
+				<a href="https://www.linode.com/">Linode</a>
+				<br />
+				<a href="https://www.ovh.com/ca/en/">OVH</a>
+				<br />
+				<a href="https://www.namecheap.com/">Namecheap</a>
+				<br />
+				<a href="https://www.gandi.net/en">Gandi</a>
+				<br />
+				<a href="https://www.ionos.com/">ionos</a>
+				<br />
+				<a href="https://www.hostinger.com/">hostinger</a>
+				<br />
+				<a href="https://www.hostgator.com/">hostgator</a>
+				<br />
+				<a href="https://www.hostwinds.com/">hostwinds</a>
+				<br />
+				<a href="https://www.hostpapa.com/">hostpapa</a>
+				<br />
+				<a href="https://www.bluehost.com/">bluehost</a>
+				<br />
+			</section>
 		</section>
 		<section class="my-4">
 			<h1>Learning</h1>
