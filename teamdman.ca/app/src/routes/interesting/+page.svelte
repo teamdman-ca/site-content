@@ -25,6 +25,8 @@
 			<a href="https://swagitda.com/blog/posts/the-security-obstructionism-secobs-market/">SecObs</a
 			>
 			<br />
+			<a href="https://caf-shib2ops.ca/CoreServices/">Canarie CAF Shibboleth institution XML</a>
+			<br />
 			<a href="http://sol.gfxile.net/dontask.html">http://sol.gfxile.net/dontask.html</a>
 			<br />
 			<a href="https://www.devever.net/~hl/xml">https://www.devever.net/~hl/xml</a>
