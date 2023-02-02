@@ -176,6 +176,10 @@
 		</section>
 		<section class="my-4">
 			<h1>Music</h1>
+			<a href="https://favoritemusic.guru/"
+				>Favoritemusic.guru spotify short-medium-long term stats</a
+			>
+			<br />
 			<a href="https://soundcloud.com/flandre-sdm">https://soundcloud.com/flandre-sdm</a>
 			<br />
 			<a href="https://www.reddit.com/r/norulesmusic2/">https://www.reddit.com/r/norulesmusic2/</a>
@@ -234,9 +238,14 @@
 		<section class="my-4">
 			<h1>Misc</h1>
 			<a href="https://www.myanonamouse.net/inviteapp.php">Book tracker</a>
+			<br />
 			<a href="https://www.emilydamstra.com/please-enough-dead-butterflies/">Dead butterflies</a>
+			<br />
 			<a href="https://alogs.space/robowaifu/res/15630.html">Community working on robot waifus</a>
+			<br />
 			<a href="https://www.dictionaryofobscuresorrows.com/">Dictionary of obscure sorrows</a>
+			<br />
+			<a href="https://excalidraw.com/">Excalidraw</a>
 		</section>
 		<section class="my-4">
 			<h1>Art</h1>
