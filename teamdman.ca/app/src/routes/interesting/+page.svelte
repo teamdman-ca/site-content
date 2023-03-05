@@ -246,6 +246,8 @@
 			<a href="https://www.dictionaryofobscuresorrows.com/">Dictionary of obscure sorrows</a>
 			<br />
 			<a href="https://excalidraw.com/">Excalidraw</a>
+			<br />
+			<a href="https://steamosaic.com/">Steam mosaic</a>
 		</section>
 		<section class="my-4">
 			<h1>Art</h1>
