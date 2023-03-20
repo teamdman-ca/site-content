@@ -118,6 +118,9 @@
 			<a href="https://sizeof.cat/">tech blog</a>
 			<br />
 			<a href="https://syncthing.net/">syncthing</a>
+			<br />
+			<a href="https://cubic-bezier.com/">cubic-bezier</a>
+			<br />
 
 			<section>
 				<h2>Hosting</h2>
