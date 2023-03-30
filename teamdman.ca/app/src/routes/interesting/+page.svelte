@@ -183,6 +183,8 @@
 				>Favoritemusic.guru spotify short-medium-long term stats</a
 			>
 			<br />
+			<a href="https://eternalbox.dev/jukebox_go.html?id=1nS12P1Ely8F4tzeXPMsYr">Eternal jukebox</a>
+			<br />
 			<a href="https://soundcloud.com/flandre-sdm">https://soundcloud.com/flandre-sdm</a>
 			<br />
 			<a href="https://www.reddit.com/r/norulesmusic2/">https://www.reddit.com/r/norulesmusic2/</a>
