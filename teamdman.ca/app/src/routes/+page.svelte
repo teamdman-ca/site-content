@@ -28,6 +28,7 @@
 				<li><a href="recipes">Recipes</a></li>
 				<li><a href="interesting">A collection of interesting links</a></li>
 				<li><a href="vehicle-risk/index.html">Vehicle risk estimation tool</a></li>
+				<li><a href="shapememory.html">Martensite-Austenite Phase Transition</a></li>
 				<li><a href="encoding">Encoding helper</a></li>
 				<li><a href="vanced">Youtube Vanced APK</a></li>
 			</ul>
