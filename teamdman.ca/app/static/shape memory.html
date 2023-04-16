@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - instancing - raycast</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <!-- <link type="text/css" rel="stylesheet" href="main.css" /> -->
+  </head>
+  <body>
+    <!-- Import maps polyfill -->
+    <!-- Remove this when import maps will be widely supported -->
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
+    ></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.151.3/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.151.3/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+
+      import Stats from "three/addons/libs/stats.module.js";
+      import { GUI } from "three/addons/libs/lil-gui.module.min.js";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+      let camera, scene, renderer, controls, stats, lines;
+
+      let mesh;
+      let amountX = 5;
+      let amountY = 7;
+      let amountZ = 3;
+	  
+      let amountXMax = 10;
+      let amountYMax = 10;
+      let amountZMax = 10;
+      let deformation = 0.18;
+      let temperature = 40;
+      let spacing = 2;
+	  let slanty = false;
+
+      const color = new THREE.Color();
+      const white = new THREE.Color().setHex(0xffffff);
+
+      init();
+      animate();
+
+      function init() {
+        camera = new THREE.PerspectiveCamera(
+          60,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          100
+        );
+        camera.position.set(0, 0, 20);
+        camera.lookAt(amountX, 0, 0);
+
+        scene = new THREE.Scene();
+
+        const light = new THREE.HemisphereLight(0xffffff, 0x888888);
+        light.position.set(0, 1, 0);
+        scene.add(light);
+
+        const geometry = new THREE.IcosahedronGeometry(0.5, 3);
+        const material = new THREE.MeshPhongMaterial({ color: 0xffffff });
+
+        mesh = new THREE.InstancedMesh(
+          geometry,
+          material,
+          amountXMax * amountYMax * amountZMax
+        );
+
+        updateMesh();
+        updateColors(temperature);
+
+        scene.add(mesh);
+
+        const gui = new GUI();
+        gui
+          .add({ spacing }, "spacing", 1, 10)
+          .step(1)
+          .name("Spacing")
+          .onChange((value) => {
+            spacing = value;
+            updateMesh();
+          });
+        gui
+          .add({ amountX }, "amountX", 1, amountXMax)
+          .step(1)
+          .name("Amount X")
+          .onChange((value) => {
+            amountX = value;
+            updateMesh();
+          });
+        gui
+          .add({ amountY }, "amountY", 1, amountYMax)
+          .step(1)
+          .name("Amount Y")
+          .onChange((value) => {
+            amountY = value;
+            updateMesh();
+          });
+        gui
+          .add({ amountZ }, "amountZ", 1, amountZMax)
+          .step(1)
+          .name("Amount Z")
+          .onChange((value) => {
+            amountZ = value;
+            updateMesh();
+          });
+		
+        gui
+          .add({ temperature }, "temperature", 15, 40)
+          .step(1)
+          .name("Temperature")
+          .onChange((value) => {
+            temperature = value;
+            updateColors(value);
+			updateMesh();
+          });
+
+        gui
+          .add({ deformation }, "deformation", 0, 0.35)
+          .step(0.01)
+          .name("Deformation")
+          .onChange((value) => {
+            deformation = value;
+            updateMesh();
+          });
+		gui.add({ slanty }, "slanty")
+		  .name("Slanty")
+		  .onChange((value) => {
+			slanty = value;
+			updateMesh();
+		  });
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.enableZoom = true;
+        controls.enablePan = true;
+
+        stats = new Stats();
+        document.body.appendChild(stats.dom);
+
+        window.addEventListener("resize", onWindowResize);
+      }
+
+      function getSpherePosition(x, y, z) {
+        const offsetX = (amountX - 1) / 2;
+        const offsetY = (amountY - 1) / 2;
+        const offsetZ = (amountZ - 1) / 2;
+        let skew;
+		if (!slanty) {
+			skew =
+			  y % 2 === 0
+				? (deformation * spacing) / 2
+				: -deformation * spacing * 2;
+		} else {
+			skew = -deformation * y * 2 * spacing;
+		}
+		if (temperature > 37) { // flip around when it turns red
+			skew = 0;
+		}
+        return new THREE.Vector3(
+          offsetX - x * spacing + skew,
+          offsetY - y * spacing,
+          offsetZ - z * spacing
+        );
+      }
+
+      function updateMesh() {
+        // console.log(
+        //   `updating ${amountX} ${amountY} ${amountZ} ${temperature} ${deformation}`
+        // );
+        mesh.count = amountX * amountY * amountZ;
+        let i = 0;
+        const matrix = new THREE.Matrix4();
+
+        for (let x = 0; x < amountX; x++) {
+          for (let y = 0; y < amountY; y++) {
+            for (let z = 0; z < amountZ; z++) {
+              const position = getSpherePosition(x, y, z);
+              matrix.setPosition(position);
+              mesh.setMatrixAt(i, matrix);
+              mesh.setColorAt(i, color);
+              mesh.instanceMatrix.needsUpdate = true;
+
+              i++;
+            }
+          }
+        }
+        scene.remove(lines);
+        lines = createLines();
+        scene.add(lines);
+      }
+
+      function updateColors(tempValue) {
+        let i = 0;
+        const hue = 30 + (240 * (30 - tempValue)) / 60;
+
+        for (let x = 0; x < amountX; x++) {
+          for (let y = 0; y < amountY; y++) {
+            for (let z = 0; z < amountZ; z++) {
+              color.setHSL(hue / 360, 1, 0.5);
+              mesh.setColorAt(i, color);
+              mesh.instanceColor.needsUpdate = true;
+              i++;
+            }
+          }
+        }
+      }
+
+      function createLines() {
+        const positions = [];
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+
+        const offsetX = (amountX - 1) / 2;
+        const offsetY = (amountY - 1) / 2;
+        const offsetZ = (amountZ - 1) / 2;
+
+        for (let x = 0; x < amountX; x++) {
+          for (let y = 0; y < amountY; y++) {
+            for (let z = 0; z < amountZ; z++) {
+              const currentPos = getSpherePosition(x, y, z);
+
+              const neighborPositions = [
+                [1, 0, 0],
+                [0, 1, 0],
+                [0, 0, 1],
+              ];
+
+              neighborPositions.forEach(([dx, dy, dz]) => {
+                if (x + dx < amountX && y + dy < amountY && z + dz < amountZ) {
+                  const neighborPos = getSpherePosition(x + dx, y + dy, z + dz);
+
+                  positions.push(currentPos.x, currentPos.y, currentPos.z);
+                  positions.push(neighborPos.x, neighborPos.y, neighborPos.z);
+                }
+              });
+            }
+          }
+        }
+
+        const lineGeometry = new THREE.BufferGeometry();
+        lineGeometry.setAttribute(
+          "position",
+          new THREE.Float32BufferAttribute(positions, 3)
+        );
+
+        const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+        return lines;
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+        stats.update();
+      }
+    </script>
+	<style type="text/css">
+body {
+	margin: 0;
+	background-color: #000;
+	color: #fff;
+	font-family: Monospace;
+	font-size: 13px;
+	line-height: 24px;
+	overscroll-behavior: none;
+}
+
+a {
+	color: #ff0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+#info {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; /* TODO Solve this in HTML */
+}
+
+a, button, input, select {
+	pointer-events: auto;
+}
+
+.lil-gui {
+	z-index: 2 !important; /* TODO Solve this in HTML */
+}
+
+@media all and ( max-width: 640px ) {
+	.lil-gui.root { 
+		right: auto;
+		top: auto;
+		max-height: 50%;
+		max-width: 80%;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+#overlay {
+	position: absolute;
+	font-size: 16px;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: rgba(0,0,0,0.7);
+}
+
+	#overlay button {
+		background: transparent;
+		border: 0;
+		border: 1px solid rgb(255, 255, 255);
+		border-radius: 4px;
+		color: #ffffff;
+		padding: 12px 18px;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+#notSupported {
+	width: 50%;
+	margin: auto;
+	background-color: #f00;
+	margin-top: 20px;
+	padding: 10px;
+}
+	</style>
+  </body>
+</html>
