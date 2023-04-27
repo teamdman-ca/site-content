@@ -242,6 +242,10 @@
 		</section>
 		<section class="my-4">
 			<h1>Misc</h1>
+			<a href="https://app.posemy.art/">online pose editor</a>
+			<br />
+			<a href="https://ephtracy.github.io/">voxel editor</a>
+			<br />
 			<a href="https://www.myanonamouse.net/inviteapp.php">Book tracker</a>
 			<br />
 			<a href="https://www.emilydamstra.com/please-enough-dead-butterflies/">Dead butterflies</a>
@@ -255,6 +259,10 @@
 			<a href="https://steamosaic.com/">Steam mosaic</a>
 			<br />
 			<a href="https://supertools.therundown.ai/">ai tools</a>
+		</section>
+		<section class="my-4">
+			<h1>Academic</h1>
+			<a href="https://typst.app/">Typst - markdown ish for academic papers</a>
 		</section>
 		<section class="my-4">
 			<h1>Art</h1>
