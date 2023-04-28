@@ -259,6 +259,8 @@
 			<a href="https://steamosaic.com/">Steam mosaic</a>
 			<br />
 			<a href="https://supertools.therundown.ai/">ai tools</a>
+			<br />
+			<a href="https://www.phind.com/">Phind - AI search engine</a>
 		</section>
 		<section class="my-4">
 			<h1>Academic</h1>
