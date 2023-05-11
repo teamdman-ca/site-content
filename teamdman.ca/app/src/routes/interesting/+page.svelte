@@ -264,6 +264,8 @@
 			<a href="https://supertools.therundown.ai/">ai tools</a>
 			<br />
 			<a href="https://www.phind.com/">Phind - AI search engine</a>
+			<br />
+			<a href="https://meaningness.com/modes-chart">We live in a society</a>
 		</section>
 		<section class="my-4">
 			<h1>Academic</h1>
@@ -315,6 +317,16 @@
 			<a href="http://guidetojapanese.org/learn/">http://guidetojapanese.org/learn/</a>
 			<br />
 			<a href="https://www.imabi.net/">https://www.imabi.net/</a>
+		</section>
+		<section class="my-4">
+			<h1>Webring ish</h1>
+			<a href="https://floatoverblow.com/">floatoverblow - they have nice music</a>
+			<br />
+			<a href="https://www.s-config.com/cellar-door/"
+				>s-config, linked to by floatoverblow, lots of outlinks here</a
+			>
+			<br />
+			<a href="https://emreed.net/LowTech_Directory">LowTech_Directory - more outlinks</a>
 		</section>
 	</article>
 </main>
