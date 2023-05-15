@@ -266,6 +266,8 @@
 			<a href="https://www.phind.com/">Phind - AI search engine</a>
 			<br />
 			<a href="https://meaningness.com/modes-chart">We live in a society</a>
+			<br />
+			<a href="https://neal.fun/space-elevator/">Space elevator</a>
 		</section>
 		<section class="my-4">
 			<h1>Academic</h1>
