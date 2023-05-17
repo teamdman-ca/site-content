@@ -179,6 +179,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Music</h1>
+			<a href="https://hypermammut.sourceforge.net/paulstretch/">Paul's Extreme Sound Stretch</a>
+			<br />
 			<a href="https://favoritemusic.guru/"
 				>Favoritemusic.guru spotify short-medium-long term stats</a
 			>
