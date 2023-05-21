@@ -247,6 +247,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Misc</h1>
+			<a href="https://youtubetranscript.com/">Youtube transcript fetcher</a>
+			<br />
 			<a href="https://app.posemy.art/">online pose editor</a>
 			<br />
 			<a href="https://ephtracy.github.io/">voxel editor</a>
