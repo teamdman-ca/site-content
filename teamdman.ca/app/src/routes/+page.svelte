@@ -11,13 +11,8 @@
 		<section>
 			<h2>Get in touch</h2>
 			<p>
-				You can join my <a href="https://discord.gg/5mbUY3mu6m" class="underline">Discord</a>
-				server, or send a direct message to <code>@Teamy#9201</code>. You can also
+				I have a <a href="https://discord.gg/5mbUY3mu6m" class="underline">Discord server</a>, and you  can also
 				<a href="mailto:TeamDman9201@gmail.com" class="underline">email me</a> I guess.
-				<span class="text-xs text-right inline-block w-full"
-					>I hope this doesn't get scraped by scammers, but if it does I guess Gmail can deal with
-					it...</span
-				>
 			</p>
 		</section>
 
