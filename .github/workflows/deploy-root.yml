@@ -7,32 +7,62 @@ on:
     paths:
       - "teamdman.ca/app/**"
 
+# https://github.com/actions/starter-workflows/blob/main/pages/nuxtjs.yml
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
         cache: "npm"
         cache-dependency-path: teamdman.ca/app/package-lock.json
-    - working-directory: teamdman.ca/app
-      run: npm ci
-    - working-directory: teamdman.ca/app
-      run: npm run build
+    
 
-    - name: Deploy to GitHub Pages 🚀
-      uses: peaceiris/actions-gh-pages@v3.9.3
-      if: github.ref == 'refs/heads/master'
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./teamdman.ca/app/build
+        # Automatically inject router.base in your Nuxt configuration file and set
+        # target to static (https://nuxtjs.org/docs/configuration-glossary/configuration-target/).
+        #
+        # You may remove this line if you want to manage the configuration yourself.
+        static_site_generator: sveltekit
+
+    - name: Install dependencies
+      run: npm ci
+      working-directory: teamdman.ca/app
+    
+    - name: Run build
+      run: npm run build
+      working-directory: teamdman.ca/app
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: teamdman.ca/app/build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
