@@ -1,5 +1,4 @@
-name: Deploy static files to Azure storage account
-
+name: Build and Deploy to GitHub Pages
 on:
   workflow_dispatch:
   push:
@@ -12,36 +11,28 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: azure/login@v1
-      with: 
-        creds: ${{ secrets.SERVICE_PRINCIPAL_CREDS }}
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 16.x
+        cache: "npm"
+        cache-dependency-path: teamdman.ca/app/package-lock.json
     - working-directory: teamdman.ca/app
       run: npm ci
     - working-directory: teamdman.ca/app
       run: npm run build
-    - name: wipe
-      uses: azure/CLI@v1
+
+    - name: Deploy to GitHub Pages 🚀
+      uses: peaceiris/actions-gh-pages@v3.9.3
+      if: github.ref == 'refs/heads/master'
       with:
-        inlineScript: |
-          az storage blob delete-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --source '${{ secrets.STORAGE_CONTAINER_NAME }}'
-    - name: upload
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-          az storage blob upload-batch --account-name ${{ secrets.STORAGE_ACCOUNT_NAME }} --auth-mode login --destination '${{ secrets.STORAGE_CONTAINER_NAME }}' --source teamdman.ca/app/build
-    - name: logout
-      run: az logout
-      if: always()
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./teamdman.ca/app/build
