@@ -216,6 +216,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Games</h1>
+			<a href="https://slowroads.io/">Slow roads</a>
+			<br/>
 			<a
 				href="javascript:var i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){`{s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);`}"
 				>Katamari (save as bookmark)</a
@@ -247,6 +249,10 @@
 		</section>
 		<section class="my-4">
 			<h1>Misc</h1>
+			<a href="https://map.greenfieldmc.net/">GreenfieldMC</a>
+			<br/>
+			<a href="https://yourmom.zip/">Your mom</a>
+			<br/>
 			<a href="https://youtubetranscript.com/">Youtube transcript fetcher</a>
 			<br />
 			<a href="https://app.posemy.art/">online pose editor</a>
