@@ -18,6 +18,8 @@
 		<section class="my-4">
 			<h1>Programming</h1>
 			<br />
+			<a href="https://elements-demo.stoplight.io/#/operations/get-todos">OpenAPI Elements demo</a>
+			<br />
 			<a href="https://www.cs.columbia.edu/~hgs/etc/writing-bugs.html">Common bugs in writing</a>
 			<br />
 			<a href="https://larsjung.de/h5ai/">https://larsjung.de/h5ai/</a>
