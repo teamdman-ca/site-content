@@ -18,6 +18,8 @@
 		<section class="my-4">
 			<h1>Programming</h1>
 			<br />
+			<a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2/">Conventional commits</a>
+			<br />
 			<a href="https://elements-demo.stoplight.io/#/operations/get-todos">OpenAPI Elements demo</a>
 			<br />
 			<a href="https://www.cs.columbia.edu/~hgs/etc/writing-bugs.html">Common bugs in writing</a>
