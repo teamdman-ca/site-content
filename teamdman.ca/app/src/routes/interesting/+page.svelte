@@ -222,6 +222,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Games</h1>
+			<a href="https://type.method.ac/#">Kerning</a>
+			<br/>
 			<a href="https://slowroads.io/">Slow roads</a>
 			<br />
 			<a href="https://bruno-simon.com/">Bruno Simon</a>
