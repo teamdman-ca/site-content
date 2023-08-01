@@ -183,6 +183,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Music</h1>
+			<a href="https://comeonandsl.am/">come on and slam</a>
+			<br/>
 			<a href="https://musicforprogramming.net/latest/">Music for programming</a>
 			<br />
 			<a href="https://hypermammut.sourceforge.net/paulstretch/">Paul's Extreme Sound Stretch</a>
