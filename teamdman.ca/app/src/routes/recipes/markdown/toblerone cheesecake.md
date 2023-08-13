@@ -1,6 +1,6 @@
 # No-Bake Peanut Butter-Toblerone Cheesecake
 
-From Aunt Jaynee 2023-03-21
+From Aunt Jaynee 2023-03-21, from kraftcanada.com
 
 Delicious doesn't have to be difficult.
 This no-bake cheesecake comes together quickly for a fabulous chocolate-peanut butter sensation.
@@ -18,6 +18,7 @@ Makes 12 servings, 1 slice each.
 - 1 cup Kraft Smooth Peanut Butter
 - 1 cup sugar
 - 2 bars (100 g each) Toblerone Swiss Milk Chocolate, chopped, divided
+- 1 1/2 cups thawed Cool Whip Whipped Topping, divided
 
 ## Instructions
 
