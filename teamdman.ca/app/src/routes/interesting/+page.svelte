@@ -184,7 +184,7 @@
 		<section class="my-4">
 			<h1>Music</h1>
 			<a href="https://comeonandsl.am/">come on and slam</a>
-			<br/>
+			<br />
 			<a href="https://musicforprogramming.net/latest/">Music for programming</a>
 			<br />
 			<a href="https://hypermammut.sourceforge.net/paulstretch/">Paul's Extreme Sound Stretch</a>
@@ -225,9 +225,9 @@
 		<section class="my-4">
 			<h1>Games</h1>
 			<a href="https://oimo.io/works/blob/">Blob toy</a>
-			<br/>
+			<br />
 			<a href="https://type.method.ac/#">Kerning</a>
-			<br/>
+			<br />
 			<a href="https://slowroads.io/">Slow roads</a>
 			<br />
 			<a href="https://bruno-simon.com/">Bruno Simon</a>
@@ -236,6 +236,8 @@
 				href="javascript:var i,s,ss=['http://kathack.com/js/kh.js','http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js'];for(i=0;i!=ss.length;i++){`{s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);`}"
 				>Katamari (save as bookmark)</a
 			>
+			<br />
+			<a href="https://shifthappens.site/typewriter/">Typewriter simulator</a>
 			<br />
 			<a href="https://www.linerider.com/">Line Rider</a>
 			<br />
@@ -263,6 +265,10 @@
 		</section>
 		<section class="my-4">
 			<h1>Misc</h1>
+			<a href="https://git.lavender.software/lavender/watch-party"
+				>watch party - couldn't compile myself, skill issue prob</a
+			>
+			<br />
 			<a href="https://map.greenfieldmc.net/">GreenfieldMC</a>
 			<br />
 			<a href="https://yourmom.zip/">Your mom</a>
