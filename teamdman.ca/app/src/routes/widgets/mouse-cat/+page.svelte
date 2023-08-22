@@ -1,6 +1,6 @@
 <div>
 	<!-- svelte requires this to not be top level :/ -->
-	<script src="./oneko.js"></script>
+	<script src="oneko.js"></script>
 </div>
 
 <a
