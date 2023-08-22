@@ -1,5 +1,13 @@
+<script lang="ts">
+	import type { PageData } from "./$types";
+	console.log("benis");
+	export let data: PageData;
+	console.log(data);
+</script>
+
 <p>oh, hi there.</p>
 <br />
-<a class="underline text-blue-600" href="./button-flicker">Button flicker</a>
-<br />
-<a class="underline text-blue-600" href="./mouse-cat">mouse cat</a>
+{#each data.pages as page}
+	<a class="underline text-blue-600" href={page}>{page}</a>
+	<br />
+{/each}
