@@ -11,7 +11,8 @@
 		<section>
 			<h2>Get in touch</h2>
 			<p>
-				I have a <a href="https://discord.gg/5mbUY3mu6m" class="underline">Discord server</a>, and you  can also
+				I have a <a href="https://discord.gg/5mbUY3mu6m" class="underline">Discord server</a>, and
+				you can also
 				<a href="mailto:TeamDman9201@gmail.com" class="underline">email me</a> I guess.
 			</p>
 		</section>
@@ -26,6 +27,7 @@
 				<li><a href="shapememory.html">Martensite-Austenite Phase Transition</a></li>
 				<li><a href="encoding">Encoding helper</a></li>
 				<li><a href="vanced">Youtube Vanced APK</a></li>
+				<li><a href="widgets">Widgets by other sites</a></li>
 			</ul>
 		</section>
 
