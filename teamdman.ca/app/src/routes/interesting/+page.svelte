@@ -210,7 +210,7 @@
 			<br />
 			<a href="https://lostfrog.net/">Lost Frog (lolicore)</a>
 			<br />
-			<a href="https://lolicore.net/">Lolicore.net</a>
+			<a href="https://lolicore.net/">Lolicore.net (content warning)</a>
 			<br />
 			<a href="https://www.youtube.com/@BreadMemes">BreadMemes (lolicore) [re]uploader</a>
 		</section>
