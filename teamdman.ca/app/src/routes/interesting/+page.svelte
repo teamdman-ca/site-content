@@ -216,6 +216,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Reading</h1>
+			<a href="https://suricrasia.online/iceberg/">The computer iceburg</a>
+			<br />
 			<a href="https://www.goodreads.com/series/266949-shadow-sun">Shadows Sun</a>
 			<br />
 			<a href="https://witchculttranslation.com/table-of-content/">Re:Zero WN</a>
@@ -224,6 +226,8 @@
 		</section>
 		<section class="my-4">
 			<h1>Games</h1>
+			<a href="https://www.openttd.org/">openttd</a>
+			<br />
 			<a href="https://oimo.io/works/blob/">Blob toy</a>
 			<br />
 			<a href="https://type.method.ac/#">Kerning</a>
