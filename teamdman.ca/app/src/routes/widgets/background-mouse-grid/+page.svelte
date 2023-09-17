@@ -7,11 +7,23 @@
 	let squares: any[] = [];
 	let lastMousePos = { x: 0, y: 0 };
 	let currentMousePos = { x: 0, y: 0 };
+	let hue = 0;
+	function updateBackgroundColor() {
+		hue += 1;
+		// https://css-tricks.com/randomcolor/
+		if (hue % 100 == 0) {
+			myDiv.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+		}
+	}
+
+	function initSize() {
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+	}
 
 	onMount(() => {
 		ctx = canvas.getContext("2d")!;
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
+		initSize();
 		initializeSquares();
 		drawSquares();
 		requestAnimationFrame(animationLoop);
@@ -65,9 +77,8 @@
 			square.updateOffset();
 		});
 		drawSquares();
+		updateBackgroundColor();
 	}
-
-	// background
 
 	function paint(context: CanvasRenderingContext2D, t: number) {
 		const { width, height } = context.canvas;
@@ -90,15 +101,30 @@
 
 		context.putImageData(imageData, 0, 0);
 	}
+
+	let myDiv: HTMLDivElement;
 </script>
 
-<div id="mouseBgEffect" style="--currentAccent: #FAFAFA;" on:mousemove={handleMouseMove}>
+<svelte:window on:resize={initSize} />
+
+<div class="fixed">
+	<a class="underline text-blue-400 bg-black" href="https://retool.com/visual-basic/">source</a>
+	<a class="underline text-blue-400 bg-black" href="..">back</a>
+</div>
+
+<div bind:this={myDiv} id="mouseBgEffect" style="--bg-hue: 0;" on:mousemove={handleMouseMove}>
 	<div class="MouseBGEffectBackground" />
 	<canvas bind:this={canvas} />
 </div>
 
 <style>
 	#mouseBgEffect {
-		background-color: orchid;
+		background-image: url("./Gandalf-30497766af4dd82cb3fa40d009e3f77d.jpg");
+		background-size: cover;
+		background-blend-mode: overlay;
+		transition-duration: 1s;
+		transition-timing-function: ease-in;
+		transition-delay: 0s;
+		transition-property: background-color;
 	}
 </style>
