@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import { Square } from "./stuff";
 
+	let reducedMotion = false;
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D;
 	let squares: any[] = [];
@@ -21,11 +22,21 @@
 		canvas.height = window.innerHeight;
 	}
 
-	onMount(() => {
+	function setupMotionPreferenceListener() {
+		window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", (e) => {
+			reducedMotion = e.matches;
+		});
+	}
+	function setupCanvas() {
 		ctx = canvas.getContext("2d")!;
 		initSize();
 		initializeSquares();
 		drawSquares();
+	}
+
+	onMount(() => {
+		setupMotionPreferenceListener();
+		setupCanvas();
 		requestAnimationFrame(animationLoop);
 	});
 
@@ -73,6 +84,7 @@
 
 	function animationLoop() {
 		requestAnimationFrame(animationLoop);
+		if (reducedMotion) return;
 		squares.forEach((square) => {
 			square.updateOffset();
 		});
@@ -107,10 +119,12 @@
 
 <svelte:window on:resize={initSize} />
 
-<div class="fixed">
+<div class="absolute">
 	<a class="underline text-blue-400 bg-black" href="https://retool.com/visual-basic/">source</a>
 	<a class="underline text-blue-400 bg-black" href="..">back</a>
 </div>
+
+<div class="ml-48 mt-20 absolute bg-slate-300 p-4">There was some blog content in the original</div>
 
 <div bind:this={myDiv} id="mouseBgEffect" style="--bg-hue: 0;" on:mousemove={handleMouseMove}>
 	<div class="MouseBGEffectBackground" />
