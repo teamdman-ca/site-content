@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: http://mininggames.net/marsminer.html,Mars Miner\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "http://mininggames.net/marsminer.html",
+    "_notes": "Mars Miner"
 }

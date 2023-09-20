@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://gitlab.com/kokubunji,https://gitlab.com/kokubunji\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://gitlab.com/kokubunji",
+    "_notes": "https://gitlab.com/kokubunji"
 }

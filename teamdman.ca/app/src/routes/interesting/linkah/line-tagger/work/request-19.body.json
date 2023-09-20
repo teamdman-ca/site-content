@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://github.com/samyk/drawio,https://github.com/samyk/drawio\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://github.com/samyk/drawio",
+    "_notes": "https://github.com/samyk/drawio"
 }

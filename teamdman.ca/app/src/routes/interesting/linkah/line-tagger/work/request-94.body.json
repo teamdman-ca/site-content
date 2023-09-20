@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://yourmom.zip/,Your mom\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://yourmom.zip/",
+    "_notes": "Your mom"
 }

@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://ciechanow.ski/sound/,Nature of sound\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://ciechanow.ski/sound/",
+    "_notes": "Nature of sound"
 }

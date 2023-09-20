@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.digitalocean.com/,Digital Ocean\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://www.digitalocean.com/",
+    "_notes": "Digital Ocean"
 }

@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.imabi.net/,https://www.imabi.net/\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://www.imabi.net/",
+    "_notes": "https://www.imabi.net/"
 }

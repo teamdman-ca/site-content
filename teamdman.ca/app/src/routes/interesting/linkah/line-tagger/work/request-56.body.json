@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://musicforprogramming.net/latest/,Music for programming\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://musicforprogramming.net/latest/",
+    "_notes": "Music for programming"
 }

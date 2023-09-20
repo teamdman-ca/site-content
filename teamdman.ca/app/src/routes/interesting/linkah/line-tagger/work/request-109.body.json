@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.deviantart.com/rhads/art/Forest-Spirit-548894017,rhads\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://www.deviantart.com/rhads/art/Forest-Spirit-548894017",
+    "_notes": "rhads"
 }

@@ -47,20 +47,22 @@ def process_line(line, n, work_dir):
         }
     }
 
-    prompt_content = {
+    body = {
         "prompt": f"### Instruction:\nGenerate a list of hashtags that might match this URL: {line}\n### Response:",
-        "max_new_tokens": 50
+        "max_new_tokens": 50,
+        "_url": line.split(",")[0],
+        "_notes": line.split(",", 1)[1],
     }
 
     # Create the JSON file
     json_path = work_dir / f"request-{n}.body.json"
     with json_path.open('w') as f:
-        json.dump(prompt_content, f, indent=4)
+        json.dump(body, f, indent=4)
 
     # Create the prompt text file
     txt_path = work_dir / f"request-{n}.body.prompt.txt"
     with txt_path.open('w') as f:
-        f.write(prompt_content['prompt'])
+        f.write(body['prompt'])
 
     return request_payload
 

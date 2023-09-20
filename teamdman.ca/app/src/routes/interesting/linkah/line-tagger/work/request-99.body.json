@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.emilydamstra.com/please-enough-dead-butterflies/,Dead butterflies\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://www.emilydamstra.com/please-enough-dead-butterflies/",
+    "_notes": "Dead butterflies"
 }

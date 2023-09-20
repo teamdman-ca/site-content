@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://bruno-simon.com/,Bruno Simon\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://bruno-simon.com/",
+    "_notes": "Bruno Simon"
 }

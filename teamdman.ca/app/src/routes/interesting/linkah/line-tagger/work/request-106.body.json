@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://meaningness.com/modes-chart,We live in a society\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://meaningness.com/modes-chart",
+    "_notes": "We live in a society"
 }
