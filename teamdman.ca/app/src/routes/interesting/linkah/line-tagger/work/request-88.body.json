@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://dood.al/pinktrombone/,Mouth sound pink trombone\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://dood.al/pinktrombone/",
+    "_notes": "Mouth sound pink trombone"
 }

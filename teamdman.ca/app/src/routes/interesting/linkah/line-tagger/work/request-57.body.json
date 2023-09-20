@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://hypermammut.sourceforge.net/paulstretch/,Paul's Extreme Sound Stretch\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://hypermammut.sourceforge.net/paulstretch/",
+    "_notes": "Paul's Extreme Sound Stretch"
 }

@@ -1,4 +1,6 @@
 {
     "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.goodreads.com/series/266949-shadow-sun,Shadows Sun\n### Response:",
-    "max_new_tokens": 50
+    "max_new_tokens": 50,
+    "_url": "https://www.goodreads.com/series/266949-shadow-sun",
+    "_notes": "Shadows Sun"
 }
