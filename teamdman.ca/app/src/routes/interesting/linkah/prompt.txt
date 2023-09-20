@@ -1,0 +1,7 @@
+Given a `chat.rest` file that uses VSCode extension `humao.rest-client` to submit rest requests,
+create a python function that accepts a path to a `.rest` file and uses string manipulation to split the
+contents by to identify each request. then find the method at the start of each request `GET`
+or `POST`. Make sure to trim whitespace. followed by the URL, followed by headers on the line after
+the URL in yaml, followed an empty line, followed by a json payload for POST requests.
+The output should be an array of objects. each object should have a `method`, `location`. `headers`,
+and `body` fields
