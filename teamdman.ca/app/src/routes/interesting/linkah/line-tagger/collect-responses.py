@@ -55,14 +55,14 @@ def main(work_dir):
         output_dict[key] = as_json(response_text)
 
     output_dir = work_dir.parent
-    output_json_path = output_dir / "output.json"
-    output_thin_json_path = output_dir / "output-thin.json"
+    output_json_path = output_dir / "responses.json"
+    output_thin_json_path = output_dir / "responses-thin.json"
 
     with output_json_path.open('w') as f:
         json.dump(output_dict, f, indent=4)
 
     # Create the thin output containing only the Body elements
-    output_thin_dict = {k: v["Body"] for k, v in output_dict.items()}
+    output_thin_dict = {k:v["Body"]["results"][0]["text"].strip() for k,v in output_dict.items()}
     with output_thin_json_path.open('w') as f:
         json.dump(output_thin_dict, f, indent=4)
 
