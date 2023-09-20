@@ -1,0 +1,4 @@
+{
+    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/,https://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/\n### Response:",
+    "max_new_tokens": 50
+}

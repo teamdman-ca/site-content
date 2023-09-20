@@ -1,1 +1,0 @@
-ls ~/text-generation-webui

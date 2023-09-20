@@ -1,0 +1,4 @@
+{
+    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: http://localhost:5173/,Home\n### Response:",
+    "max_new_tokens": 50
+}
