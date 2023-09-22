@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp276,https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp276\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp276",
-    "_notes": "https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp276"
-}

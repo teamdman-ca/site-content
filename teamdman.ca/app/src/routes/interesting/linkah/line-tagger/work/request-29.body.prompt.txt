@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: http://www.shadyurl.com/,Shady url minifier
-### Response:

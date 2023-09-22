@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: http://www.drpetter.se/project_sfxr.html,http://www.drpetter.se/project_sfxr.html
-### Response:

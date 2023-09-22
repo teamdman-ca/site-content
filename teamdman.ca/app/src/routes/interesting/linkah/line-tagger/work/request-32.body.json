@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://huggingface.co/,AI ML models\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "https://huggingface.co/",
-    "_notes": "AI ML models"
-}

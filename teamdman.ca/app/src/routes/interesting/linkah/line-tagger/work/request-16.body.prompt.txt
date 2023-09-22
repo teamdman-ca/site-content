@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: https://twitter.com/Oracle/status/658433772904423424?s=19&fbclid=IwAR1zWeg7eEcJduDGPdRUNymrRgdZVqHI0T7Bo1wc7P9Do4oybx0j7Ve7P9Q,https://twitter.com/Oracle/status/658433772904423424?s=19&amp;fbclid=IwAR1zWeg7eEcJduDGPdRUNymrRgdZVqHI0T7Bo1wc7P9Do4oybx0j7Ve7P9Q
-### Response:

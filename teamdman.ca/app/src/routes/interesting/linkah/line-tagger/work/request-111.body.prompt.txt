@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: https://danbooru.donmai.us/posts?page=2&tags=ruu_%28tksymkw%29,Ruu art
-### Response:
