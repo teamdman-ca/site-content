@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: https://www.hostinger.com/,hostinger
-### Response:

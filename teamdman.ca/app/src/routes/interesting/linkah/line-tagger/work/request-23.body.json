@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://www.google.com/search?q=sankey+diagram,Sankey diagram\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "https://www.google.com/search?q=sankey+diagram",
-    "_notes": "Sankey diagram"
-}

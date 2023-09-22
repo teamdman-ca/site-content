@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: http://www.shadyurl.com/,Shady url minifier\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "http://www.shadyurl.com/",
-    "_notes": "Shady url minifier"
-}

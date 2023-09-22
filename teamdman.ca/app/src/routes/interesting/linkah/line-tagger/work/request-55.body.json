@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://comeonandsl.am/,come on and slam\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "https://comeonandsl.am/",
-    "_notes": "come on and slam"
-}

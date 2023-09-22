@@ -1,3 +1,0 @@
-### Instruction:
-Generate a list of hashtags that might match this URL: https://gitlab.com/kokubunji,https://gitlab.com/kokubunji
-### Response:

@@ -1,6 +1,0 @@
-{
-    "prompt": "### Instruction:\nGenerate a list of hashtags that might match this URL: https://ephtracy.github.io/,voxel editor\n### Response:",
-    "max_new_tokens": 50,
-    "_url": "https://ephtracy.github.io/",
-    "_notes": "voxel editor"
-}
