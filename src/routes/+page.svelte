@@ -36,7 +36,7 @@
 			<ul>
 				<li><a href="https://www.curseforge.com/members/teamdman/projects">Minecraft Mods</a></li>
 				<li>
-					<a href="https://github.com/teamdman-ca/site-content/tree/master/teamdman.ca/app"
+					<a href="https://github.com/teamdman-ca/site-content/tree/master"
 						>Source code for this website</a
 					>
 				</li>
