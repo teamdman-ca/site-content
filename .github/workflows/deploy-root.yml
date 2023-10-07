@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - "master"
-    paths:
-      - "teamdman.ca/app/**"
+    # paths:
+    #   - "teamdman.ca/app/**"
 
 # https://github.com/actions/starter-workflows/blob/main/pages/nuxtjs.yml
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
@@ -31,7 +31,7 @@ jobs:
       with:
         node-version: 16.x
         cache: "npm"
-        cache-dependency-path: teamdman.ca/app/package-lock.json
+        cache-dependency-path: package-lock.json
     
 
     - name: Setup Pages
@@ -45,16 +45,16 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
-      working-directory: teamdman.ca/app
+      working-directory: .
     
     - name: Run build
       run: npm run build
-      working-directory: teamdman.ca/app
+      working-directory: .
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        path: teamdman.ca/app/build
+        path: build
 
   deploy:
     environment:
