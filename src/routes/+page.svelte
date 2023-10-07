@@ -1,8 +1,7 @@
 <svelte:head>
 	<title>Home - TeamDman</title>
 </svelte:head>
-
-<main class="m-5">
+<main class="p-5" style="background-color: rgb(215, 197, 154)">
 	<article class="prose prose-xl m-auto font-serif">
 		<h1 class="text-center max-w-full block">TeamDman</h1>
 		<hr />
@@ -58,3 +57,18 @@
 		</section>
 	</article>
 </main>
+
+<style>
+	h1 {
+		@apply text-orange-700;
+	}
+	h2 {
+		@apply text-orange-800;
+	}
+	hr {
+		@apply border-orange-800;
+	}
+	ul ::marker {
+		@apply text-orange-800;
+	}
+</style>
