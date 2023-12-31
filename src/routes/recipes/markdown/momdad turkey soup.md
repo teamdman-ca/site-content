@@ -42,11 +42,12 @@
 12. Add salt and pepper; visit whole soup surface
 13. Add ½ cup frozen corn
 14. Add ½ cup frozen peas
-15. Add 2 bay leaves
-16. Cook on 2, stirring every 20 minutes to monitor nothing sticking to bottom
-17. If it starts to boil, stir and keep lid off
-18. If keeps boiling, turn to low
-19. Cook until dinner
-20. Turn off, let cool
-21. When no longer too warm, put in fridge
-22. By the end of the 7th day (including day made), freeze remainder in tall cottage cheese/yogurt containers`;
+15. Add 1 ½ cups macaroni noodles
+16. Add 2 bay leaves
+17. Cook on 2, stirring every 20 minutes to monitor nothing sticking to bottom
+18. If it starts to boil, stir and keep lid off
+19. If keeps boiling, turn to low
+20. Cook until dinner
+21. Turn off, let cool
+22. When no longer too warm, put in fridge
+23. By the end of the 7th day (including day made), freeze remainder in tall cottage cheese/yogurt containers`;
