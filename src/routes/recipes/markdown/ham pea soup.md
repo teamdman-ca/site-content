@@ -1,4 +1,3 @@
-<!DOCTYPE recipe>
 # Hambone split pea soup
 
 https://www.tasteofhome.com/recipes/old-fashioned-split-pea-soup-with-ham-bone/

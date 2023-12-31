@@ -1,4 +1,3 @@
-<!DOCTYPE recipe>
 # Mexican Pizza (3-layer dip)
 
 Mom's cooking planner, January 25th.  
