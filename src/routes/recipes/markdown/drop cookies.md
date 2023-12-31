@@ -1,4 +1,3 @@
-<!DOCTYPE recipe>
 # Drop cookies
 
 Mom's cooking planner, August 22, referencing Joy of Cooking Nov 29, 2014.

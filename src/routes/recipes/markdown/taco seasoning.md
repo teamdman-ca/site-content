@@ -1,4 +1,3 @@
-<!DOCTYPE recipe>
 # Taco Seasoning
 
 2 tbsp replaces a 1.25oz packet from the store.
