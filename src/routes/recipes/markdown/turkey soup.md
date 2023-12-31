@@ -2,6 +2,8 @@
 
 ![From Mom's journal cookbook, citing Gran, January 13th recipe](journal%20recipe%20book%20entry.jpg)
 
+Thanks mom for making it with me ❤ 2023-12-30
+
 ## Part 1 - Boiling the Carcass
 
 ![](1.jpg)
