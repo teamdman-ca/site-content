@@ -1,4 +1,4 @@
-# MomDad Turkey Soup
+# Turkey Soup
 
 ![From Mom's journal cookbook, citing Gran, January 13th recipe](journal%20recipe%20book%20entry.jpg)
 
