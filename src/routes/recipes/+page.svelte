@@ -24,6 +24,14 @@
 					</h2>
 				</li>
 			{/each}
+			<li>
+				<h2>
+					<a class="underline" href="momdadturkeysoup"
+						>MomDad Turkey Soup
+						<img src="momdadturkeysoup/1.jpg" alt="recipe preview" />
+					</a>
+				</h2>
+			</li>
 		</ul>
 	</article>
 </main>
