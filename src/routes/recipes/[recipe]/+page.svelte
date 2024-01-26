@@ -15,6 +15,7 @@
 
 <main>
 	<article class="prose m-auto font-serif">
+		<img src={data.imageUrl} alt="recipe preview" />
 		<SvelteMarkdown source={data.markdown} />
 	</article>
 </main>

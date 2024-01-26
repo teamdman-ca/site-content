@@ -4,10 +4,16 @@ export const load: PageLoad = async ({ params }) => {
 	// can't use intermediate variable for the string path
 	console.log(`loading '../markdown/${params.recipe}.md?raw'`)
 	const md = await import(`../markdown/${params.recipe}.md?raw`);
-	// // ensure that the images are included in the build output
-	// await import(`../markdown/${params.recipe}.png`);
+	const images = import.meta.glob("../markdown/*.{png,jpg,jpeg,gif,webp}");
+	const imageName = Object.keys(images).find((imagePath) => imagePath.includes(params.recipe));
+	if (imageName === undefined) {
+		throw new Error(`No image found for recipe ${params.recipe}`);
+	}
+	const imageUrl = ((await images[imageName]()) as {default:string}).default;
+	
 	return {
 		name: params.recipe,
-		markdown: md.default
+		markdown: md.default,
+		imageUrl,
 	};
 };
