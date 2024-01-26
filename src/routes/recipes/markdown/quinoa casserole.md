@@ -1,6 +1,6 @@
 # Quinoa Casserole
 
-*This was inspired by [How Sweet It Is](http://www.howsweeteats.com/2011/05/creamy-caprese-pasta/).*
+*This was sourced from a printout inspired by [How Sweet Eats](http://www.howsweeteats.com/2011/05/creamy-caprese-pasta/).*
 
 Cook Time: 15 minutes  
 Total Time: 25 minutes
