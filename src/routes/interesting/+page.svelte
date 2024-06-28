@@ -140,6 +140,7 @@
 		</section>
 		<section class="my-4">
 			<h1>Games</h1>
+			<a href="https://onemillioncheckboxes.com/">One Million Checkboxes</a> <br />
 			<a href="https://www.openttd.org/">openttd</a> <br />
 			<a href="https://oimo.io/works/blob/">Blob toy</a> <br />
 			<a href="https://type.method.ac/#">Kerning</a> <br />
