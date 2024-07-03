@@ -11,9 +11,11 @@
 				href="https://cloudpundit.com/2022/09/12/cloud-adoption-will-fail-because-of-the-skills-gap/"
 				>Cloud adoption will fail because of the skills gap</a
 			> <br />
+			<a href="https://cohost.org/sirocyl/post/2891449-i-broke-ikea">I ○broke IKEA</a> <br />
 		</section>
 		<section class="my-4">
 			<h1>Programming</h1>
+			<a href="https://cubiq.dev/">Cubiq</a> <br />
 			<br />
 			<a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2/">Conventional commits</a>
 			<br />
