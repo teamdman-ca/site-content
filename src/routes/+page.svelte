@@ -15,10 +15,13 @@
 	});
 </script>
 
+<div>
+	<script async src="widgets/purple-confetti/confetti.js"></script>
+</div>
 <svelte:window on:resize={() => resizeCanvasToWindowAndInitSquares(context)} />
 
 <!-- Parent element with relative positioning to create a stacking context -->
-<main class="p-5 relative">
+<main class="p-5 relative" id="purple">
 	<!-- Canvas with lower z-index -->
 	<canvas
 		class="fixed inset-0 z-10"
@@ -107,8 +110,12 @@
 		background-size: 10px 10px;
 	}
 	article {
-		background-color: white;
-		@apply p-2;
+		@apply p-2 bg-black;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	article.prose {
+		--tw-prose-body: #adadad;
+		--tw-prose-links: #f8b95d;
 	}
 </style>
