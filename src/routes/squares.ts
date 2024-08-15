@@ -85,11 +85,11 @@ export function mountHandler(canvas: HTMLCanvasElement, myDiv: HTMLDivElement) {
 }
 
 export function updateBackgroundColor(context: SquareGridContext) {
-	context.hue += 1;
-	// https://css-tricks.com/randomcolor/
-	if (context.hue % 100 == 0) {
-		context.myDiv.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-	}
+	// context.hue += 1;
+	// // https://css-tricks.com/randomcolor/
+	// if (context.hue % 100 == 0) {
+	// 	context.myDiv.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	// }
 }
 
 export function resizeCanvasToWindowAndInitSquares(context: SquareGridContext) {
