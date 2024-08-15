@@ -1,8 +1,33 @@
-<svelte:head>
-	<title>Home - TeamDman</title>
-</svelte:head>
-<main class="p-5" style="background-color: rgb(215, 197, 154)">
-	<article class="prose prose-xl m-auto font-serif">
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { handleMouseMove, resizeCanvasToWindowAndInitSquares, mountHandler } from "./squares";
+	import type { SquareGridContext } from "./squares";
+
+	let myDiv: HTMLDivElement;
+	let canvas: HTMLCanvasElement;
+	let context: SquareGridContext;
+
+	onMount(() => {
+		let x = mountHandler(canvas, myDiv);
+		if (x) {
+			context = x;
+		}
+	});
+</script>
+
+<svelte:window on:resize={() => resizeCanvasToWindowAndInitSquares(context)} />
+
+<!-- Parent element with relative positioning to create a stacking context -->
+<main class="p-5 relative">
+	<!-- Canvas with lower z-index -->
+	<canvas
+		class="fixed inset-0 z-10"
+		bind:this={canvas}
+		on:mousemove={(e) => handleMouseMove(e, context)}
+	/>
+
+	<!-- Article with higher z-index -->
+	<article class="prose prose-xl m-auto font-serif relative z-20">
 		<h1 class="text-center max-w-full block">TeamDman</h1>
 		<hr />
 		<p>Welcome to my site.</p>
@@ -58,17 +83,32 @@
 	</article>
 </main>
 
+<svelte:head>
+	<title>Home - TeamDman</title>
+</svelte:head>
+
 <style>
 	h1 {
-		@apply text-orange-700;
+		@apply text-yellow-700;
 	}
 	h2 {
-		@apply text-orange-800;
+		@apply text-yellow-800;
 	}
 	hr {
-		@apply border-orange-800;
+		@apply border-yellow-800;
 	}
 	ul ::marker {
-		@apply text-orange-800;
+		@apply text-yellow-800;
+	}
+	main {
+		background-color: rgb(215, 197, 154);
+		transition: background-color 0.3s ease, color 0.3s ease;
+		background-image: radial-gradient(circle, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0) 1px);
+		background-size: 10px 10px;
+	}
+	article {
+		background-color: white;
+		@apply p-2;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 </style>
