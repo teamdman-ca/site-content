@@ -1,0 +1,11 @@
+git filter-repo --path "borscht.jpg" `
+                --path "drop cookies.jpg" `
+                --path "ham pea soup.png" `
+                --path "mexican pizza.jpg" `
+                --path "peanut butter balls.jpg" `
+                --path "quinoa casserole.jpg" `
+                --path "taco seasoning.png" `
+                --path "toblerone cheesecake.jpg" `
+                --path "turkey casserole.jpg" `
+                --path "turkey soup.jpg" `
+                --invert-paths
