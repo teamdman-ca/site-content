@@ -132,7 +132,16 @@
 		regex = reg;
 	}
 
-	$: results = activeList.filter((x) => x.match(new RegExp(regex, "i")));
+	let results: string[] = [];
+
+	$: {
+		try {
+			const exp = new RegExp(regex, "i");
+			results = activeList.filter((x) => x.match(exp));
+		} catch (e) {
+			console.error("Failed to compile regexp:", e);
+		}
+	}
 
 	if (dev) {
 		addGuess("beans");
