@@ -11,7 +11,7 @@
 				href="https://cloudpundit.com/2022/09/12/cloud-adoption-will-fail-because-of-the-skills-gap/"
 				>Cloud adoption will fail because of the skills gap</a
 			> <br />
-			<a href="https://cohost.org/sirocyl/post/2891449-i-broke-ikea">I ○broke IKEA</a> <br />
+			<a href="https://cohost.org/sirocyl/post/2891449-i-broke-ikea">I broke IKEA</a> <br />
 		</section>
 		<section class="my-4">
 			<h1>Programming</h1>
@@ -114,6 +114,7 @@
 		</section>
 		<section class="my-4">
 			<h1>Music</h1>
+			<a href="https://vizzy.io/">Music video visualization creation tool</a><br />
 			<a href="https://snaeplayer.com/">Snae Player</a> <br />
 			<a href="https://comeonandsl.am/">come on and slam</a> <br />
 			<a href="https://musicforprogramming.net/latest/">Music for programming</a> <br />
