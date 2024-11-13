@@ -15,6 +15,7 @@
 		</section>
 		<section class="my-4">
 			<h1>Programming</h1>
+			<a href="https://bandysc.github.io/AvaloniaVisualBasic6/">Visual basic</a><br />
 			<a href="https://www.srenity.online/">Find serenity</a> <br />
 			<br />
 			<a href="https://cubiq.dev/">Cubiq</a> <br />
