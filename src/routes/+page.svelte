@@ -6,13 +6,26 @@
 	let myDiv: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
 	let context: SquareGridContext;
+	let motionAllowed = true;
 
+	// Check for prefers-reduced-motion setting
 	onMount(() => {
-		let x = mountHandler(canvas, myDiv);
-		if (x) {
-			context = x;
+		const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+		motionAllowed = !mediaQuery.matches; // Disable if reduce is preferred
+
+		if (motionAllowed) {
+			let x = mountHandler(canvas, myDiv);
+			if (x) {
+				context = x;
+			}
 		}
 	});
+
+	function handleMouseMoveWrapper(event: MouseEvent) {
+		if (motionAllowed && context) {
+			handleMouseMove(event, context);
+		}
+	}
 </script>
 
 <div>
@@ -21,13 +34,9 @@
 <svelte:window on:resize={() => resizeCanvasToWindowAndInitSquares(context)} />
 
 <!-- Parent element with relative positioning to create a stacking context -->
-<main class="p-5 relative" id="purple">
+<main class="p-5 relative min-h-screen" id="purple">
 	<!-- Canvas with lower z-index -->
-	<canvas
-		class="fixed inset-0 z-10"
-		bind:this={canvas}
-		on:mousemove={(e) => handleMouseMove(e, context)}
-	/>
+	<canvas class="fixed inset-0 z-10" bind:this={canvas} on:mousemove={handleMouseMoveWrapper} />
 
 	<!-- Article with higher z-index -->
 	<article class="prose prose-xl m-auto font-serif relative z-20">

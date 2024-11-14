@@ -35,9 +35,11 @@ const Confetti = (() => {
 			null != t &&
 				t.addEventListener("click", (e) => {
 					!(function (e, t) {
-						let o = [];
-						for (let i = 0; i < n; i++) o.push(c(e, t));
-						a.push({ particles: o });
+						if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+							let o = [];
+							for (let i = 0; i < n; i++) o.push(c(e, t));
+							a.push({ particles: o });
+						}
 					})(2 * e.clientX, 2 * e.clientY),
 						l && (e.target.style.visibility = "hidden");
 				});
