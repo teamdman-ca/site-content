@@ -1,10 +1,3 @@
-<!-- <div class="flex p-10">
-	<div id="my-container" class="btn-container">
-		<p id="my-p">
-			<a id="my-button" href="#" class="btn btn-primary btn-download">Getting Started</a>
-		</p>
-	</div>
-</div> -->
 <main>
 	<div class="main-page">
 		<div class="banner-wrapper">
