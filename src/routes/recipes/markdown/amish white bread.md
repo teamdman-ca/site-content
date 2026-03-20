@@ -26,5 +26,4 @@ Makes 2 loaves.
 9. Preheat oven to 350°F (175°C).
 10. Bake for 30 minutes, or until golden brown and loaves sound hollow when tapped on the bottom.
 11. Optional: brush tops with melted butter for a soft crust.
-
-Let cool before slicing.
+12. Let cool before slicing.
